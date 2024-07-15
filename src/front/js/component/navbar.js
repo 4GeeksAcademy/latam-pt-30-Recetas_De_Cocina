@@ -10,11 +10,7 @@ export const Navbar = () => {
 					<img src="https://factoryfy.es/wp-content/uploads/dise%C3%B1o-logo-blog-cocina.jpg" className="card-img-top" style={{maxWidth: "7rem", maxHeight: "7rem"}}/>
 				</span>
 				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-secondary ">Mas recetas</button>
-					</Link>
-				</div>
+				
 				<div className="ml-auto">
 					<Link to="">
 						<button className="btn btn-secondary ">Iniciar Sesión</button>

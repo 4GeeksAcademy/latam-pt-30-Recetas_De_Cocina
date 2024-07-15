@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import recetasImageUrl from "../../img/recetas.jpeg";
 import recetasImageUr2 from "../../img/recetas 2.jpeg";
@@ -89,6 +90,9 @@ export const Home = () => {
     </div>
   </div>
 			
+  <Link to="/demo">
+				<button className="btn btn-secondary bg-dark">Ver mas</button>
+			</Link>
 			
 		</div>
 	);
