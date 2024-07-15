@@ -19,50 +19,50 @@ export const Demo = () => {
 			<div className="container my-5">
     <div className="row">
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark" >
           <div className="card-body">
             <h5 className="card-title"><strong>Snacks</strong></h5>
             <p>
 				<img src={recetasSnacks} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
 			</p>
             <p className="card-text">Deliciosos Snacks para botanear.</p>
-            <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+            <a href="#" className="btn btn-secondary">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
           <h5 className="card-title"><strong>Pizzas</strong></h5>
             <p>
 				<img src={recetasPizzas} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Toda la variedad de pizzas.</p>
-            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            <a href="#" className="btn btn-secondary  ">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
           <h5 className="card-title"><strong>Fast food</strong></h5>
             <p>
 				<img src={recetasFastfood} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14rem"}} />
 			</p>
             <p className="card-text">Recetas de comida rapida.</p>
-            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            <a href="#" className="btn btn-secondary  ">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Keto</strong></h5>
+          <h5 className="card-title"><strong>Cocteleria</strong></h5>
             <p>
 				<img src={recetasCocteleria} className="img-fluid rounded-circle" style={{maxWidth: "16rem", maxHeight: "16rem"}} />
 			</p>
             <p className="card-text">Recetas de cocteleria.</p>
-            <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+            <a href="#" className="btn btn-secondary ">Ver recetas</a>
           </div>
         </div>
       </div>
