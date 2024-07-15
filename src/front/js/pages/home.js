@@ -21,16 +21,19 @@ export const Home = () => {
 			 <div class="row align-items-center">
 			 <div className="col">
 								<img src={recetasImageUr2} className="img-fluid rounded-circle" style={{maxWidth: "20rem", maxHeight: "20rem"}}/>
+                <h3><strong>Deliciosas</strong></h3>
 							</div>
 			<div className="col">
-			<p>
+			
 				<img src={recetasImageUrl} className="img-fluid rounded-circle" style={{maxWidth: "20rem", maxHeight: "20rem"}} />
-			</p>
+        <h3><strong>Recetas</strong></h3>
+		
 			</div>
 			<div className="col">
-			<p>
+			
 				<img src={recetasImageUr3} className="img-fluid rounded-circle" style={{maxWidth: "20rem", maxHeight: "20rem"}} />
-			</p>
+        <h3><strong>Culinarias</strong></h3>
+			
 			</div>
 			</div>
 			<div className="container my-5">
@@ -38,7 +41,7 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Postres</h5>
+            <h5 className="card-title"><strong>Postres</strong></h5>
             <p>
 				<img src={recetasPostres} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
 			</p>
@@ -50,7 +53,7 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Desayunos</h5>
+          <h5 className="card-title"><strong>Desayunos</strong></h5>
             <p>
 				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
 			</p>
@@ -62,7 +65,7 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Almuerzos</h5>
+          <h5 className="card-title"><strong>Almuerzos</strong></h5>
             <p>
 				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
@@ -74,7 +77,7 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Recetas Keto</h5>
+          <h5 className="card-title"><strong>Keto</strong></h5>
             <p>
 				<img src={recetasKeto} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
 			</p>

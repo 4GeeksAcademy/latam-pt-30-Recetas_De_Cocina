@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import recetasSnacks from "../../img/Snacks.jpg";
+import recetasPizzas from "../../img/pizzas.png";
+import recetasFastfood from "../../img/fastfood.jpg";
+import recetasCocteleria from "../../img/cocteleria.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -8,33 +12,68 @@ export const Demo = () => {
 
 	return (
 		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
-							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
-								<p style={{ color: item.initial }}>
-									Check store/flux.js scroll to the actions to see the code
-								</p>
-							) : null}
-							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-								Change Color
-							</button>
-						</li>
-					);
-				})}
-			</ul>
+			<div className="text-center mt-5">
+			 <header className="text-center py-5">
+             <h1><strong>Mas recetas de cocina</strong></h1>
+             </header>
+			<div className="container my-5">
+    <div className="row">
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title"><strong>Snacks</strong></h5>
+            <p>
+				<img src={recetasSnacks} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
+			</p>
+            <p className="card-text">Deliciosos Snacks para botanear.</p>
+            <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-body">
+          <h5 className="card-title"><strong>Pizzas</strong></h5>
+            <p>
+				<img src={recetasPizzas} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+			</p>
+            <p className="card-text">Toda la variedad de pizzas.</p>
+            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-body">
+          <h5 className="card-title"><strong>Fast food</strong></h5>
+            <p>
+				<img src={recetasFastfood} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14rem"}} />
+			</p>
+            <p className="card-text">Recetas de comida rapida.</p>
+            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-body">
+          <h5 className="card-title"><strong>Keto</strong></h5>
+            <p>
+				<img src={recetasCocteleria} className="img-fluid rounded-circle" style={{maxWidth: "16rem", maxHeight: "16rem"}} />
+			</p>
+            <p className="card-text">Recetas de cocteleria.</p>
+            <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+			
+			
+		</div>
 			<br />
 			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
+				<button className="btn btn-secondary bg-dark">Ver mas</button>
 			</Link>
 		</div>
 	);
