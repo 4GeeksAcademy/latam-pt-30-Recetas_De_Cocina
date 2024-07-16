@@ -47,7 +47,7 @@ export const Hotcakes = () => {
 <p>
    
 
-3.  Sirve los hot cakes, decora con moras azules, fresas, las hojas de menta y con un poco de Leche Condensada LA LECHERA® Sirve Fácil. Ofrece.
+3.  Sirve los hot cakes, decora con moras azules, fresas, las hojas de menta y con un poco de Leche Condensada. Sirve Fácil. Ofrece.
 
 
 </p>

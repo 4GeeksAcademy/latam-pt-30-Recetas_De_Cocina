@@ -54,7 +54,9 @@ export const Desayunos = () => {
 				<img src={Omelette} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de comida Omelette.</p>
+            <Link to="/Omelette">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>
