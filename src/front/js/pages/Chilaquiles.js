@@ -43,6 +43,10 @@ export const Chilaquiles = () => {
     3.  Sirve los chilaquiles y baña con un poco más de salsa. Añade el pollo, la Media Crema  y el queso. Ofrece.
 </p>
 
+<Link to="/desayunos">
+				<button className="btn btn-secondary bg-dark">Regresar</button>
+			</Link>
+
                 </div>
                 </div>
                 </div>
