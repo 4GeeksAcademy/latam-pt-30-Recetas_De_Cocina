@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FlanNapolitano from "../../img/FlanNapolitano.jpg";
 import carlota from "../../img/carlota.jpg";
 import brownie from "../../img/brownie.jpg";
-import PanFrances from "../../img/pan frances.jpg";
+import Arrozconleche from "../../img/Arrozconleche.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -63,12 +63,12 @@ export const Postre = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Pan Francés</strong></h5>
+          <h5 className="card-title"><strong>Arroz con leche</strong></h5>
             <p>
-				<img src={PanFrances} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+				<img src={Arrozconleche} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de pan Francés.</p>
-            <Link to="/Panfrances">
+            <p className="card-text">Receta de pan Arroz con leche.</p>
+            <Link to="/Arrozconleche">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

@@ -12,6 +12,7 @@ import { Panfrances } from "./pages/Pan-frances"
 import { Flannapolitano } from "./pages/FlanNapolitano"
 import { Carlota } from "./pages/Carlota"
 import { Brownie } from "./pages/Brownie"
+import { ArrozConLeche } from "./pages/ArrozConLeche"
 import { Chilaquiles } from "./pages/Chilaquiles";
 import { Desayunos } from "./pages/Desayunos";
 import { Postre } from "./pages/Postres";
@@ -44,6 +45,7 @@ const Layout = () => {
                         <Route element={<Flannapolitano  />} path="/FlanNapolitano" />
                         <Route element={<Carlota  />} path="/carlota" />
                         <Route element={<Brownie  />} path="/brownie" />
+                        <Route element={<ArrozConLeche  />} path="/Arrozconleche" />
                         <Route element={<Panfrances />} path="/Panfrances" />
                         <Route element={<Omelettes/>} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />
