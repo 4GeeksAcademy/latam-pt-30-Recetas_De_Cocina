@@ -26,7 +26,9 @@ export const Desayunos = () => {
 				<img src={chilaquilesverdes} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de Chilaquiles verdes.</p>
-            <a href="#" className="btn btn-secondary">Ver recetas</a>
+            <Link to="/Chilaquiles">
+            <a href="#" className="btn btn-secondary">Ver receta</a>
+            </Link>
           </div>
         </div>
       </div>
