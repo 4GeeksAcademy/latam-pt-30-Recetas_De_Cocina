@@ -31,7 +31,11 @@ export const Chilaquiles = () => {
                     <p>1 Envase de Media Crema refrigerada (190 g) </p>
                     <p>200 Gramos de queso fresco desmoronado. </p>
 
-                    <h1><strong>Pasos</strong></h1>
+
+<div className="container">
+<div className="card text-white bg-success mb-3" >
+<div className="card-body">
+<h1><strong>Pasos</strong></h1>
                     <p><strong>Prepara la salsa</strong></p>
                     <p>
     1.  Para la salsa, licúa los tomates con la cebolla, los ajos, los chiles, el agua, el cilantro y el consomé de pollo. Calienta el aceite, vierte lo que licuaste y cocina hasta que hierva moviendo ocasionalmente.
@@ -42,6 +46,26 @@ export const Chilaquiles = () => {
 <p>
     3.  Sirve los chilaquiles y baña con un poco más de salsa. Añade el pollo, la Media Crema  y el queso. Ofrece.
 </p>
+</div>
+</div>
+</div>
+
+                    
+
+<div className="container">
+<div className="card text-white bg-danger mb-3" >
+<div className="card-body">
+<h3><strong>Informacion nutricional</strong></h3>
+<p> 771.5 kcal = 3,230kj /por porción</p>
+<p><strong>Carbohidratos:</strong> 71g <strong>Energía:</strong>  	771.5 kcal</p>  
+<p><strong>Grasas:</strong>   35.4g    <strong>Fibras:</strong>  6.3 g</p> 
+<p><strong>Proteinas:</strong> 41.7g   <strong>Grasas saturadas:</strong>   10.8 g </p> 
+<p><strong>Sodio:</strong> 1329.7mg    <strong>Azucares:</strong>    9.2 g </p> 
+</div>
+</div>
+</div>
+
+<p></p>
 
 <Link to="/desayunos">
 				<button className="btn btn-secondary bg-dark">Regresar</button>

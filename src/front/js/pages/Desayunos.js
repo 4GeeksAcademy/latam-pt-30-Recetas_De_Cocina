@@ -27,20 +27,22 @@ export const Desayunos = () => {
 			</p>
             <p className="card-text">Receta de Chilaquiles verdes.</p>
             <Link to="/Chilaquiles">
-            <a href="#" className="btn btn-secondary">Ver receta</a>
+            <a href="#" className="btn btn-secondary bg-success">Ver receta</a>
             </Link>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card bg-secondary text-light bg-dark">
+        <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
           <h5 className="card-title"><strong>Hot Cakes</strong></h5>
             <p>
 				<img src={hotcakes} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de Hot cakes.</p>
-            <a href="#" className="btn btn-secondary  ">Ver recetas</a>
+            <Link to="/Hotcakes">
+            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>
@@ -52,19 +54,19 @@ export const Desayunos = () => {
 				<img src={Omelette} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de comida Omelette.</p>
-            <a href="#" className="btn btn-secondary  ">Ver recetas</a>
+            <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card bg-secondary text-light bg-dark">
+        <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
           <h5 className="card-title"><strong>Pan frances</strong></h5>
             <p>
 				<img src={PanFrances} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de pan frances.</p>
-            <a href="#" className="btn btn-secondary ">Ver recetas</a>
+            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
           </div>
         </div>
       </div>

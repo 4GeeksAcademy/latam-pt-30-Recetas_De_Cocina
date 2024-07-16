@@ -39,19 +39,19 @@ export const Home = () => {
 			<div className="container my-5">
     <div className="row">
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
             <h5 className="card-title"><strong>Postres</strong></h5>
             <p>
 				<img src={recetasPostres} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
 			</p>
             <p className="card-text">Deliciosos postres para cada ocasión.</p>
-            <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+            <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
           <h5 className="card-title"><strong>Desayunos</strong></h5>
             <p>
@@ -65,19 +65,19 @@ export const Home = () => {
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
           <h5 className="card-title"><strong>Almuerzos</strong></h5>
             <p>
 				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
             <p className="card-text">Recetas para una comida completa.</p>
-            <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
           </div>
         </div>
       </div>
       <div className="col-md-3">
-        <div className="card">
+        <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
           <h5 className="card-title"><strong>Keto</strong></h5>
             <p>
