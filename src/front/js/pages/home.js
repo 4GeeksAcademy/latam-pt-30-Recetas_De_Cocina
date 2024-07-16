@@ -46,7 +46,9 @@ export const Home = () => {
 				<img src={recetasPostres} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
 			</p>
             <p className="card-text">Deliciosos postres para cada ocasión.</p>
+            <Link to="/postres">
             <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>

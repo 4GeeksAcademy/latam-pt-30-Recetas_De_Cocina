@@ -8,12 +8,15 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Hotcakes } from "./pages/Hotcakes"
-
+import { Panfrances } from "./pages/Pan-frances"
+import { Flannapolitano } from "./pages/FlanNapolitano"
 import { Chilaquiles } from "./pages/Chilaquiles";
 import { Desayunos } from "./pages/Desayunos";
+import { Postre } from "./pages/Postres";
 import { Omelettes } from "./pages/Omelette";
-import injectContext from "./store/appContext";
 
+
+import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -36,8 +39,11 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
+                        <Route element={<Flannapolitano  />} path="/FlanNapolitano" />
+                        <Route element={<Panfrances />} path="/Panfrances" />
                         <Route element={<Omelettes/>} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />
+                        <Route element={<Postre />} path="/postres" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
