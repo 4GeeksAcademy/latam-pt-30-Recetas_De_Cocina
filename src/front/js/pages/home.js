@@ -14,7 +14,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
+		<div className=" container-fluid  text-center mt-5">
 			 <header className="text-center py-5">
              <h1><strong>Recetas de cocina</strong></h1>
              </header>

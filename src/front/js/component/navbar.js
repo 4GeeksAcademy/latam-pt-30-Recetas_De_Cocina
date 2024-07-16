@@ -6,7 +6,7 @@ export const Navbar = () => {
 	return (
 		
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div className="container">
+			<div className="container-fluid">
 				<Link to="/">
 				<span className="navbar-brand mb-0 h1 ms-5">
 					<img src="https://factoryfy.es/wp-content/uploads/dise%C3%B1o-logo-blog-cocina.jpg" className="img-fluid rounded-circle" style={{maxWidth: "7rem", maxHeight: "7rem"}}/>
