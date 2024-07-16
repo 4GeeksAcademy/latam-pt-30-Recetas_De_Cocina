@@ -58,7 +58,9 @@ export const Home = () => {
 				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
 			</p>
             <p className="card-text">Comienza tu día con energía.</p>
+            <Link to="/desayunos">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>
