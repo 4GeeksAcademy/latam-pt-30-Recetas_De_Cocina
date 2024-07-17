@@ -7,7 +7,7 @@ import recetasImageUr3 from "../../img/recetas 3.jpg";
 import recetasPostres from "../../img/postres.jpg";
 import recetasDesayunos from "../../img/Desayunos.jpeg";
 import recetasAlmuerzos from "../../img/almuerzos.jpg";
-import recetasKeto from "../../img/Keto.jpg";
+import recetascena from "../../img/cena.jpg";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -83,11 +83,11 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Keto</strong></h5>
+          <h5 className="card-title"><strong>Cenas</strong></h5>
             <p>
-				<img src={recetasKeto} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14.5rem", maxHeight: "14.5rem"}} />
 			</p>
-            <p className="card-text">Recetas bajas en carbohidratos.</p>
+            <p className="card-text">Recetas de cenas deliciosas.</p>
             <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
           </div>
         </div>
