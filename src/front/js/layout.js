@@ -47,7 +47,7 @@ const Layout = () => {
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Enchiladas />} path="/enchiladas" />
                         
-                        <Route element={<LasañaConChampiñones  />} path="/lasañaC" />
+                        <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
                         <Route element={<Flannapolitano  />} path="/FlanNapolitano" />
                         <Route element={<Carlota  />} path="/carlota" />

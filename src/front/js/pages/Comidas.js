@@ -40,7 +40,7 @@ export const Comidas = () => {
 				<img src={lasaña} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
 			</p>
             <p className="card-text">Receta de Lasaña con champiñones.</p>
-            <Link to="/Lasaña">
+            <Link to="/lasagnaC">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
