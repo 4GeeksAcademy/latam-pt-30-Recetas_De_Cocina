@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import enchiladas from "../../img/enchiladas.jpg";
 import lasaña from "../../img/Lasaña.jpg";
-import Omelette from "../../img/omelette.jpg";
-import PanFrances from "../../img/pan frances.jpg";
+import pastamarinera from "../../img/pastamarinara.png";
+import papagratinada from "../../img/PapaGratinada.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -49,12 +49,12 @@ export const Comidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Omelette</strong></h5>
+          <h5 className="card-title"><strong>Pasta Marinera</strong></h5>
             <p>
-				<img src={Omelette} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+				<img src={pastamarinera} className="img-fluid rounded-circle" style={{maxWidth: "12rem", maxHeight: "11rem"}} />
 			</p>
-            <p className="card-text">Receta de comida Omelette.</p>
-            <Link to="/Omelette">
+            <p className="card-text">Receta de Pasta Marinera.</p>
+            <Link to="/PastaM">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>
@@ -63,12 +63,12 @@ export const Comidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Pan Francés</strong></h5>
+          <h5 className="card-title"><strong>Papa gratinada al pastor</strong></h5>
             <p>
-				<img src={PanFrances} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+				<img src={papagratinada} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
-            <p className="card-text">Receta de pan Francés.</p>
-            <Link to="/Panfrances">
+            <p className="card-text">Receta de papa gratinada.</p>
+            <Link to="/Papagratinada">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
