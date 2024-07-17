@@ -14,7 +14,11 @@ import { Carlota } from "./pages/Carlota"
 import { Brownie } from "./pages/Brownie"
 import { ArrozConLeche } from "./pages/ArrozConLeche"
 import { Chilaquiles } from "./pages/Chilaquiles";
+import { Enchiladas } from "./pages/Enchiladas";
+
+import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
+import { Comidas } from "./pages/Comidas";
 import { Postre } from "./pages/Postres";
 import { Omelettes } from "./pages/Omelette";
 
@@ -41,6 +45,9 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
+                        <Route element={<Enchiladas />} path="/enchiladas" />
+                        
+                        <Route element={<LasañaConChampiñones  />} path="/lasañaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
                         <Route element={<Flannapolitano  />} path="/FlanNapolitano" />
                         <Route element={<Carlota  />} path="/carlota" />
@@ -49,6 +56,7 @@ const Layout = () => {
                         <Route element={<Panfrances />} path="/Panfrances" />
                         <Route element={<Omelettes/>} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />
+                        <Route element={<Comidas />} path="/comidas" />
                         <Route element={<Postre />} path="/postres" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />

@@ -69,12 +69,14 @@ export const Home = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Almuerzos</strong></h5>
+          <h5 className="card-title"><strong>Comidas</strong></h5>
             <p>
 				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
             <p className="card-text">Recetas para una comida completa.</p>
+            <Link to="/comidas">
             <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>
