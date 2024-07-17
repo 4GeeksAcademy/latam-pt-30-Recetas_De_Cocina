@@ -88,7 +88,9 @@ export const Home = () => {
 				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14.5rem", maxHeight: "14.5rem"}} />
 			</p>
             <p className="card-text">Recetas de cenas deliciosas.</p>
+            <Link to="/cenas">
             <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>

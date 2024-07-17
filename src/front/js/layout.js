@@ -17,10 +17,12 @@ import { Chilaquiles } from "./pages/Chilaquiles";
 import { Enchiladas } from "./pages/Enchiladas";
 import { PastaMarinera } from "./pages/PastaMarinera";
 import { PapaGratinada } from "./pages/PapaGratinada";
+import { AlamebreChampi } from "./pages/AlambredeChamp";
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
 import { Comidas } from "./pages/Comidas";
+import { Cenas} from "./pages/Cenas";
 import { Postre } from "./pages/Postres";
 import { Omelettes } from "./pages/Omelette";
 
@@ -50,6 +52,7 @@ const Layout = () => {
                         <Route element={<Enchiladas />} path="/enchiladas" />
                         <Route element={<PastaMarinera />} path="/PastaM" />
                         <Route element={<PapaGratinada />} path="/Papagratinada" />
+                        <Route element={<AlamebreChampi />} path="/alambre" />
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
@@ -60,6 +63,7 @@ const Layout = () => {
                         <Route element={<Panfrances />} path="/Panfrances" />
                         <Route element={<Omelettes/>} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />
+                        <Route element={<Cenas />} path="/cenas" />
                         <Route element={<Comidas />} path="/comidas" />
                         <Route element={<Postre />} path="/postres" />
                         <Route element={<Single />} path="/single/:theid" />
