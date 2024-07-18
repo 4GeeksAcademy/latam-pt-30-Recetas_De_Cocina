@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import alambrechamp from "../../img/alambrechampi.jpg";
 import salmon from "../../img/salmon.jpg";
-import pastamarinera from "../../img/pastamarinara.png";
-import papagratinada from "../../img/PapaGratinada.jpg";
+import SardinaMx from "../../img/sardinas-la-mexicana.jpg";
+import albondigaT from "../../img/albondigasTocino.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -49,12 +49,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Pasta Marinera</strong></h5>
+          <h5 className="card-title"><strong>Sardina a la Mexicana</strong></h5>
             <p>
-				<img src={pastamarinera} className="img-fluid rounded-circle" style={{maxWidth: "12rem", maxHeight: "11rem"}} />
+				<img src={SardinaMx} className="img-fluid rounded-circle" style={{maxWidth: "12rem", maxHeight: "11rem"}} />
 			</p>
-            <p className="card-text">Receta de Pasta Marinera.</p>
-            <Link to="/PastaM">
+            <p className="card-text">Receta de Sardina a la Mexicana.</p>
+            <Link to="/sardinamex">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>
@@ -63,12 +63,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Papa gratinada al pastor</strong></h5>
+          <h5 className="card-title"><strong>Albondigas con tocino</strong></h5>
             <p>
-				<img src={papagratinada} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+				<img src={albondigaT} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
-            <p className="card-text">Receta de papa gratinada.</p>
-            <Link to="/Papagratinada">
+            <p className="card-text">Receta de albondigas con tocino.</p>
+            <Link to="/albondigaToci">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

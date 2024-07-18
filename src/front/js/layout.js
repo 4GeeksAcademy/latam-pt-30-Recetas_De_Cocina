@@ -19,6 +19,8 @@ import { PastaMarinera } from "./pages/PastaMarinera";
 import { PapaGratinada } from "./pages/PapaGratinada";
 import { AlamebreChampi } from "./pages/AlambredeChamp";
 import { SalmonMantequilla } from "./pages/SalmonMante";
+import { SardinaMexicana } from "./pages/Sardina-mexicana";
+import { AlbondigasTocino } from "./pages/AlbondigasTocino";
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
@@ -55,6 +57,9 @@ const Layout = () => {
                         <Route element={<PapaGratinada />} path="/Papagratinada" />
                         <Route element={<AlamebreChampi />} path="/alambre" />
                         <Route element={<SalmonMantequilla />} path="/salmonMantequilla" />
+                        <Route element={<SardinaMexicana />} path="/sardinamex" />
+                        <Route element={<AlbondigasTocino />} path="/albondigaToci" />
+                        
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
