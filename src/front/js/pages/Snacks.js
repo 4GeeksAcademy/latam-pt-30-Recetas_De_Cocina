@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import papasfritasmx from "../../img/patatas-fritas-mexicanas.jpg";
 import palomitaschoco from "../../img/palomitas-choco.jpg";
 import alitasman from "../../img/alitasmango.jpg";
-import Arrozconleche from "../../img/Arrozconleche.jpg";
+import botanacarnes from "../../img/botana-carnes.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -63,12 +63,12 @@ export const Snacks = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Arroz con leche</strong></h5>
+          <h5 className="card-title"><strong>Botana de Carnes</strong></h5>
             <p>
-				<img src={Arrozconleche} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={botanacarnes} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de pan Arroz con leche.</p>
-            <Link to="/Arrozconleche">
+            <p className="card-text">Receta de Botana de Carnes.</p>
+            <Link to="/botanacarnes">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

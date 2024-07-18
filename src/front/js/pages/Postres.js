@@ -67,7 +67,7 @@ export const Postre = () => {
             <p>
 				<img src={Arrozconleche} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de pan Arroz con leche.</p>
+            <p className="card-text">Receta de Arroz con leche.</p>
             <Link to="/Arrozconleche">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
