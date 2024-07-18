@@ -21,9 +21,11 @@ import { AlamebreChampi } from "./pages/AlambredeChamp";
 import { SalmonMantequilla } from "./pages/SalmonMante";
 import { SardinaMexicana } from "./pages/Sardina-mexicana";
 import { AlbondigasTocino } from "./pages/AlbondigasTocino";
+import { PapasFritasMX } from "./pages/PapasFritasMx";
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
+import { Snacks } from "./pages/Snacks";
 import { Comidas } from "./pages/Comidas";
 import { Cenas} from "./pages/Cenas";
 import { Postre } from "./pages/Postres";
@@ -59,6 +61,8 @@ const Layout = () => {
                         <Route element={<SalmonMantequilla />} path="/salmonMantequilla" />
                         <Route element={<SardinaMexicana />} path="/sardinamex" />
                         <Route element={<AlbondigasTocino />} path="/albondigaToci" />
+                        <Route element={<Snacks />} path="/snacks" />
+                        <Route element={<PapasFritasMX />} path="/papasfritasmx" />
                         
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />

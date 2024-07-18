@@ -26,7 +26,9 @@ export const Demo = () => {
 				<img src={recetasSnacks} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "17rem"}} />
 			</p>
             <p className="card-text">Deliciosos Snacks para botanear.</p>
+            <Link to="/snacks">
             <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,32 +1,32 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import alambrechamp from "../../img/alambrechampi.jpg";
-import salmon from "../../img/salmon.jpg";
-import SardinaMx from "../../img/sardinas-la-mexicana.jpg";
-import albondigaT from "../../img/albondigasTocino.jpg";
+import papasfritasmx from "../../img/patatas-fritas-mexicanas.jpg";
+import carlota from "../../img/carlota.jpg";
+import brownie from "../../img/brownie.jpg";
+import Arrozconleche from "../../img/Arrozconleche.jpg";
 
 import { Context } from "../store/appContext";
 
-export const Cenas = () => {
+export const Snacks = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="container">
 			<div className="text-center mt-5">
 			 <header className="text-center py-5">
-             <h1><strong>Cenas</strong></h1>
+             <h1><strong>Snacks</strong></h1>
              </header>
 			<div className="container my-5">
     <div className="row">
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark" >
           <div className="card-body">
-            <h5 className="card-title"><strong>Alambre de champiñones</strong></h5>
+            <h5 className="card-title"><strong>Papas fritas a la mexicana</strong></h5>
             <p>
-				<img src={alambrechamp} className="img-fluid rounded-circle" style={{maxWidth: "18rem", maxHeight: "9rem"}} />
+				<img src={papasfritasmx} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Salmón con Mantequilla de Cilantro.</p>
-            <Link to="/alambre">
+            <p className="card-text">Papas fritas a la mexicana.</p>
+            <Link to="/papasfritasmx">
             <a href="#" className="btn btn-secondary bg-success">Ver receta</a>
             </Link>
           </div>
@@ -35,12 +35,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Salmón con Mantequilla de Cilantro </strong></h5>
+          <h5 className="card-title"><strong>Carlota de Limon</strong></h5>
             <p>
-				<img src={salmon} className="img-fluid rounded-circle" style={{maxWidth: "9rem", maxHeight: "20rem"}} />
+				<img src={carlota} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "18rem"}} />
 			</p>
-            <p className="card-text">Receta de Salmón con Mantequilla de Cilantro.</p>
-            <Link to="/salmonMantequilla">
+            <p className="card-text">Receta de Carlota de Limon.</p>
+            <Link to="/carlota">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
@@ -49,12 +49,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Sardina a la Mexicana</strong></h5>
+          <h5 className="card-title"><strong>Brownie casero</strong></h5>
             <p>
-				<img src={SardinaMx} className="img-fluid rounded-circle" style={{maxWidth: "12rem", maxHeight: "11rem"}} />
+				<img src={brownie} className="img-fluid rounded-circle" style={{maxWidth: "10.5rem", maxHeight: "10.5rem"}} />
 			</p>
-            <p className="card-text">Receta de Sardina a la Mexicana.</p>
-            <Link to="/sardinamex">
+            <p className="card-text">Receta de Brownie casero.</p>
+            <Link to="/brownie">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>
@@ -63,12 +63,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Albondigas con tocino</strong></h5>
+          <h5 className="card-title"><strong>Arroz con leche</strong></h5>
             <p>
-				<img src={albondigaT} className="img-fluid rounded-circle" style={{maxWidth: "14.5rem", maxHeight: "14rem"}} />
+				<img src={Arrozconleche} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de albondigas con tocino.</p>
-            <Link to="/albondigaToci">
+            <p className="card-text">Receta de pan Arroz con leche.</p>
+            <Link to="/Arrozconleche">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
