@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import alambrechamp from "../../img/AlambreChamp.jpg";
+import alambrechamp from "../../img/alambrechampi.jpg";
 
 
 

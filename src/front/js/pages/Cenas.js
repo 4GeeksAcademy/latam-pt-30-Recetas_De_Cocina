@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import alambrechamp from "../../img/AlambreChamp.jpg";
-import lasaña from "../../img/Lasaña.jpg";
+import alambrechamp from "../../img/alambrechampi.jpg";
+import salmon from "../../img/salmon.jpg";
 import pastamarinera from "../../img/pastamarinara.png";
 import papagratinada from "../../img/PapaGratinada.jpg";
 
@@ -23,9 +23,9 @@ export const Cenas = () => {
           <div className="card-body">
             <h5 className="card-title"><strong>Alambre de champiñones</strong></h5>
             <p>
-				<img src={alambrechamp} className="img-fluid rounded-circle" style={{maxWidth: "16rem", maxHeight: "15rem"}} />
+				<img src={alambrechamp} className="img-fluid rounded-circle" style={{maxWidth: "18rem", maxHeight: "9rem"}} />
 			</p>
-            <p className="card-text">Receta de Alambre de champiñones.</p>
+            <p className="card-text">Salmón con Mantequilla de Cilantro.</p>
             <Link to="/alambre">
             <a href="#" className="btn btn-secondary bg-success">Ver receta</a>
             </Link>
@@ -35,12 +35,12 @@ export const Cenas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Lasaña con champiñones</strong></h5>
+          <h5 className="card-title"><strong>Salmón con Mantequilla de Cilantro </strong></h5>
             <p>
-				<img src={lasaña} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+				<img src={salmon} className="img-fluid rounded-circle" style={{maxWidth: "9rem", maxHeight: "20rem"}} />
 			</p>
-            <p className="card-text">Receta de Lasaña con champiñones.</p>
-            <Link to="/lasagnaC">
+            <p className="card-text">Receta de Salmón con Mantequilla de Cilantro.</p>
+            <Link to="/salmonMantequilla">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

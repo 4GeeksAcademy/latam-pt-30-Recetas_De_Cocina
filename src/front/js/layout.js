@@ -18,6 +18,7 @@ import { Enchiladas } from "./pages/Enchiladas";
 import { PastaMarinera } from "./pages/PastaMarinera";
 import { PapaGratinada } from "./pages/PapaGratinada";
 import { AlamebreChampi } from "./pages/AlambredeChamp";
+import { SalmonMantequilla } from "./pages/SalmonMante";
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
@@ -53,6 +54,7 @@ const Layout = () => {
                         <Route element={<PastaMarinera />} path="/PastaM" />
                         <Route element={<PapaGratinada />} path="/Papagratinada" />
                         <Route element={<AlamebreChampi />} path="/alambre" />
+                        <Route element={<SalmonMantequilla />} path="/salmonMantequilla" />
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
