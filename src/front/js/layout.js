@@ -22,6 +22,7 @@ import { SalmonMantequilla } from "./pages/SalmonMante";
 import { SardinaMexicana } from "./pages/Sardina-mexicana";
 import { AlbondigasTocino } from "./pages/AlbondigasTocino";
 import { PapasFritasMX } from "./pages/PapasFritasMx";
+import { PalomitasChocolate } from "./pages/Palomitas-choco";
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
@@ -63,6 +64,7 @@ const Layout = () => {
                         <Route element={<AlbondigasTocino />} path="/albondigaToci" />
                         <Route element={<Snacks />} path="/snacks" />
                         <Route element={<PapasFritasMX />} path="/papasfritasmx" />
+                        <Route element={<PalomitasChocolate />} path="/palomitaschoco" />
                         
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />

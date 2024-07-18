@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import papasfritasmx from "../../img/patatas-fritas-mexicanas.jpg";
-import carlota from "../../img/carlota.jpg";
+import palomitaschoco from "../../img/palomitas-choco.jpg";
 import brownie from "../../img/brownie.jpg";
 import Arrozconleche from "../../img/Arrozconleche.jpg";
 
@@ -35,12 +35,12 @@ export const Snacks = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Carlota de Limon</strong></h5>
+          <h5 className="card-title"><strong>Palomitas sabor chocolate</strong></h5>
             <p>
-				<img src={carlota} className="img-fluid rounded-circle" style={{maxWidth: "17rem", maxHeight: "18rem"}} />
+				<img src={palomitaschoco} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de Carlota de Limon.</p>
-            <Link to="/carlota">
+            <p className="card-text">Receta de Palomitas sabor chocolate.</p>
+            <Link to="/palomitaschoco">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
