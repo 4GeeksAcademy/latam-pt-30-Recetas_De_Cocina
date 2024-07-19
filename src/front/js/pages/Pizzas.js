@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import pizzahawa from "../../img/pizzahawaiana.jpg";
 import pizzamarga from "../../img/Pizzamargarita.jpg";
-import alitasman from "../../img/alitasmango.jpg";
-import botanacarnes from "../../img/botana-carnes.jpg";
+import pizzachicago from "../../img/pizzachicago.jpg";
+import pizzaparri from "../../img/pizzaparrillera.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -40,7 +40,7 @@ export const Pizzas = () => {
 				<img src={pizzamarga} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de Pizza Margarita.</p>
-            <Link to="/palomitaschoco">
+            <Link to="/pizzamargarita">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
@@ -49,12 +49,12 @@ export const Pizzas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Alitas con salsa de mango</strong></h5>
+          <h5 className="card-title"><strong>Pizza Chicago</strong></h5>
             <p>
-				<img src={alitasman} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "10.5rem"}} />
+				<img src={pizzachicago} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
-            <p className="card-text">Receta de Alitas con salsa de mango.</p>
-            <Link to="/Alitasmango">
+            <p className="card-text">Receta de Pizza Chicago.</p>
+            <Link to="/pizzachicago">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>
@@ -63,12 +63,12 @@ export const Pizzas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Botana de Carnes</strong></h5>
+          <h5 className="card-title"><strong>Pizza Prrillera</strong></h5>
             <p>
-				<img src={botanacarnes} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={pizzaparri} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14rem"}} />
 			</p>
-            <p className="card-text">Receta de Botana de Carnes.</p>
-            <Link to="/botanacarnes">
+            <p className="card-text">Receta de Pizza Parrillera.</p>
+            <Link to="/pizzaparrillera">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

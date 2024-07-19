@@ -26,6 +26,10 @@ import { PalomitasChocolate } from "./pages/Palomitas-choco";
 import { AlitasSalsaMango } from "./pages/AlitasMango";
 import { BotanaDeCarnes } from "./pages/BotanaCarnes";
 import { PizzaHawaiana } from "./pages/PizzaHawaiana";
+import { Pizzamargarita } from "./pages/PizzaMargarita";
+import { PizzaChicago } from "./pages/PizzaChicago";
+import { PizzaParrillera } from "./pages/PizzaParrillera";
+
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
@@ -74,6 +78,9 @@ const Layout = () => {
                         <Route element={<BotanaDeCarnes />} path="/botanacarnes" />
                         <Route element={<Pizzas />} path="/pizzas" />
                         <Route element={<PizzaHawaiana />} path="/pizzahawaiana" />
+                        <Route element={<Pizzamargarita />} path="/pizzamargarita" />
+                        <Route element={<PizzaChicago />} path="/pizzachicago" />
+                        <Route element={<PizzaParrillera />} path="/pizzaparrillera" />
                         
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
