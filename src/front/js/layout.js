@@ -32,6 +32,7 @@ import { PizzaParrillera } from "./pages/PizzaParrillera";
 import { PizzaBurguer } from "./pages/PizzaBurguer";
 import { HamburguesaTocino } from "./pages/HamburguesaTocino";
 import { TortaPavo } from "./pages/TortaPavo";
+import { HotDogPolaco } from "./pages/Hotdogpolaco";
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
@@ -90,6 +91,7 @@ const Layout = () => {
                         <Route element={<PizzaBurguer />} path="/pizzaburguer" />
                         <Route element={<HamburguesaTocino />} path="/hamburguesatocino" />
                         <Route element={<TortaPavo />} path="/tortapavo" />
+                        <Route element={<HotDogPolaco />} path="/hotdogpolaco" />
                         
                         
                         

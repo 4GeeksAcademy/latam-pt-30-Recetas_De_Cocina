@@ -63,11 +63,11 @@ export const Demo = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Cocteleria</strong></h5>
+          <h5 className="card-title"><strong>Bebidas</strong></h5>
             <p>
 				<img src={recetasCocteleria} className="img-fluid rounded-circle" style={{maxWidth: "16rem", maxHeight: "16rem"}} />
 			</p>
-            <p className="card-text">Recetas de cocteleria.</p>
+            <p className="card-text">Recetas de bebidas.</p>
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
           </div>
         </div>
