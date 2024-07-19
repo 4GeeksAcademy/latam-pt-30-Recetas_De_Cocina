@@ -38,8 +38,9 @@ export const SalmonMantequilla = () => {
                     <p><strong>Marina</strong></p>
                     <p>
                     1.  Horno precalentado a 200 °C.
+                    <p>
 2.  Sazona el salmón con la sal, el Jugo Maggi, la Salsa Tipo Inglesa y la Salsa de Soya; cubre con plástico adherente y refrigera por 3 horas.
-
+</p>
 </p>
 <p><strong>Mezcla</strong></p>
 <p>3.  Para la mantequilla de cilantro, mezcla el ajo con el jengibre, las hojuelas de chile, la mantequilla fundida, el aceite de ajonjolí y el cilantro. </p>

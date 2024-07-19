@@ -43,8 +43,9 @@ export const PapaGratinada = () => {
                     <p><strong>Cocina</strong></p>
                     <p>
                     1.  Horno precalentado a 180 °C.
+                    <p>
 2.  Para el pastor, calienta una cucharada de aceite y fríe la cebolla hasta que este transparente, añade el ajo, la milanesa de cerdo y cocina hasta que dore ligeramente. Licúa los chiles, el vinagre, el agua y el Concentrado de Tomate con Pollo , vierte lo que licuaste a la mezcla anterior y cocina por 5 minutos o hasta que espese ligeramente.
-
+</p>
 </p>
 <p><strong>Hornea</strong></p>
 <p>3.  Coloca las papas de manera individual en papel aluminio, añade a cada papa 1 cucharada de aceite, 1 cucharada de Jugo MAGGI® y 1 cucharada de Salsa Tipo Inglesa , envuélvelas y hornéalas a 180 °C de 45 a 50 minutos. </p>
