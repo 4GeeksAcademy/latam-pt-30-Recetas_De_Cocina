@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import pizzaburguer from "../../img/pizzaburger.jpg";
 import hamburguesatocino from "../../img/hamburguesatocino.jpg";
-import alitasman from "../../img/alitasmango.jpg";
+import tortapavo from "../../img/tortapavo.jpg";
 import botanacarnes from "../../img/botana-carnes.jpg";
 
 import { Context } from "../store/appContext";
@@ -49,12 +49,12 @@ export const FastFood = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Alitas con salsa de mango</strong></h5>
+          <h5 className="card-title"><strong>Torta de Pavo</strong></h5>
             <p>
-				<img src={alitasman} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "10.5rem"}} />
+				<img src={tortapavo} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "10.5rem"}} />
 			</p>
-            <p className="card-text">Receta de Alitas con salsa de mango.</p>
-            <Link to="/Alitasmango">
+            <p className="card-text">Receta de torta de pavo.</p>
+            <Link to="/tortapavo">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>

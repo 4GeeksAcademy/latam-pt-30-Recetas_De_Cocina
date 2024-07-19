@@ -31,6 +31,7 @@ import { PizzaChicago } from "./pages/PizzaChicago";
 import { PizzaParrillera } from "./pages/PizzaParrillera";
 import { PizzaBurguer } from "./pages/PizzaBurguer";
 import { HamburguesaTocino } from "./pages/HamburguesaTocino";
+import { TortaPavo } from "./pages/TortaPavo";
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
@@ -88,6 +89,7 @@ const Layout = () => {
                         <Route element={<FastFood />} path="/fastfood" />
                         <Route element={<PizzaBurguer />} path="/pizzaburguer" />
                         <Route element={<HamburguesaTocino />} path="/hamburguesatocino" />
+                        <Route element={<TortaPavo />} path="/tortapavo" />
                         
                         
                         
