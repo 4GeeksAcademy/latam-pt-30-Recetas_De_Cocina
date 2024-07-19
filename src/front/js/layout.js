@@ -25,11 +25,13 @@ import { PapasFritasMX } from "./pages/PapasFritasMx";
 import { PalomitasChocolate } from "./pages/Palomitas-choco";
 import { AlitasSalsaMango } from "./pages/AlitasMango";
 import { BotanaDeCarnes } from "./pages/BotanaCarnes";
+import { PizzaHawaiana } from "./pages/PizzaHawaiana";
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
 import { Snacks } from "./pages/Snacks";
+import { Pizzas } from "./pages/Pizzas";
 import { Comidas } from "./pages/Comidas";
 import { Cenas} from "./pages/Cenas";
 import { Postre } from "./pages/Postres";
@@ -70,6 +72,8 @@ const Layout = () => {
                         <Route element={<PalomitasChocolate />} path="/palomitaschoco" />
                         <Route element={<AlitasSalsaMango />} path="/Alitasmango" />
                         <Route element={<BotanaDeCarnes />} path="/botanacarnes" />
+                        <Route element={<Pizzas />} path="/pizzas" />
+                        <Route element={<PizzaHawaiana />} path="/pizzahawaiana" />
                         
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />

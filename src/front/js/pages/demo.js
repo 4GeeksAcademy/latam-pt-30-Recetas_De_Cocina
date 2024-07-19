@@ -40,7 +40,9 @@ export const Demo = () => {
 				<img src={recetasPizzas} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Toda la variedad de pizzas.</p>
+            <Link to="/pizzas">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>
