@@ -54,7 +54,9 @@ export const Demo = () => {
 				<img src={recetasFastfood} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14rem"}} />
 			</p>
             <p className="card-text">Recetas de comida rapida.</p>
+            <Link to="/fastfood">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
+            </Link>
           </div>
         </div>
       </div>

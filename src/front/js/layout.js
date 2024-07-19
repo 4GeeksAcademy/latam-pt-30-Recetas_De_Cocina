@@ -29,13 +29,16 @@ import { PizzaHawaiana } from "./pages/PizzaHawaiana";
 import { Pizzamargarita } from "./pages/PizzaMargarita";
 import { PizzaChicago } from "./pages/PizzaChicago";
 import { PizzaParrillera } from "./pages/PizzaParrillera";
-
+import { PizzaBurguer } from "./pages/PizzaBurguer";
+import { HamburguesaTocino } from "./pages/HamburguesaTocino";
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
 import { Snacks } from "./pages/Snacks";
 import { Pizzas } from "./pages/Pizzas";
+import { FastFood } from "./pages/FastFood";
+
 import { Comidas } from "./pages/Comidas";
 import { Cenas} from "./pages/Cenas";
 import { Postre } from "./pages/Postres";
@@ -45,6 +48,7 @@ import { Omelettes } from "./pages/Omelette";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 
 //create your first component
@@ -81,6 +85,10 @@ const Layout = () => {
                         <Route element={<Pizzamargarita />} path="/pizzamargarita" />
                         <Route element={<PizzaChicago />} path="/pizzachicago" />
                         <Route element={<PizzaParrillera />} path="/pizzaparrillera" />
+                        <Route element={<FastFood />} path="/fastfood" />
+                        <Route element={<PizzaBurguer />} path="/pizzaburguer" />
+                        <Route element={<HamburguesaTocino />} path="/hamburguesatocino" />
+                        
                         
                         
                         <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
