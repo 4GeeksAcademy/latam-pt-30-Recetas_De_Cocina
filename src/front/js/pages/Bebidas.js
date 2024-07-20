@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import pinacolada from "../../img/pina-colada.png";
-import palomitaschoco from "../../img/palomitas-choco.jpg";
-import alitasman from "../../img/alitasmango.jpg";
-import botanacarnes from "../../img/botana-carnes.jpg";
+import cheladanorteña from "../../img/cheladanorteña.jpg";
+import horchata from "../../img/horchata.jpg";
+import cocteltomate from "../../img/coteltomate.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -23,7 +23,7 @@ export const Bebidas = () => {
           <div className="card-body">
             <h5 className="card-title"><strong>Piña colada</strong></h5>
             <p>
-				<img src={pinacolada} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={pinacolada} className="img-fluid rounded-circle" style={{maxWidth: "16rem", maxHeight: "16rem"}} />
 			</p>
             <p className="card-text">Receta de piña colada.</p>
             <Link to="/pinacolada">
@@ -35,12 +35,12 @@ export const Bebidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Palomitas sabor chocolate</strong></h5>
+          <h5 className="card-title"><strong>Chelada Norteña</strong></h5>
             <p>
-				<img src={palomitaschoco} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={cheladanorteña} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14rem"}} />
 			</p>
-            <p className="card-text">Receta de Palomitas sabor chocolate.</p>
-            <Link to="/palomitaschoco">
+            <p className="card-text">Receta de Chelada norteña.</p>
+            <Link to="/cheladanortena">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
@@ -49,12 +49,12 @@ export const Bebidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-dark">
           <div className="card-body">
-          <h5 className="card-title"><strong>Alitas con salsa de mango</strong></h5>
+          <h5 className="card-title"><strong>Agua de Horchata</strong></h5>
             <p>
-				<img src={alitasman} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "10.5rem"}} />
+				<img src={horchata} className="img-fluid rounded-circle" style={{maxWidth: "12rem", maxHeight: "12rem"}} />
 			</p>
-            <p className="card-text">Receta de Alitas con salsa de mango.</p>
-            <Link to="/Alitasmango">
+            <p className="card-text">Receta de Agua de horchata.</p>
+            <Link to="/aguahorchata">
             <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
             </Link>
           </div>
@@ -63,12 +63,12 @@ export const Bebidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Botana de Carnes</strong></h5>
+          <h5 className="card-title"><strong>Cocteñ de tomate</strong></h5>
             <p>
-				<img src={botanacarnes} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={cocteltomate} className="img-fluid rounded-circle" style={{maxWidth: "9.5rem", maxHeight: "9rem"}} />
 			</p>
-            <p className="card-text">Receta de Botana de Carnes.</p>
-            <Link to="/botanacarnes">
+            <p className="card-text">Receta de Coctel de tomate con tamarindo.</p>
+            <Link to="/cocteltomatetamarindo">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>

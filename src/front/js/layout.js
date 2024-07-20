@@ -35,6 +35,9 @@ import { HamburguesaTocino } from "./pages/HamburguesaTocino";
 import { TortaPavo } from "./pages/TortaPavo";
 import { HotDogPolaco } from "./pages/Hotdogpolaco";
 import { PiñaColada } from "./pages/PiñaColada";
+import { CheladaNorteña } from "./pages/CheladaNorteña";
+import { AguaHorchata } from "./pages/AguaHorchata";
+import { CoctelTomateTamarindo } from "./pages/CoctelTomate";
 
 
 
@@ -98,6 +101,9 @@ const Layout = () => {
                         <Route element={<HotDogPolaco />} path="/hotdogpolaco" />
                         <Route element={<Bebidas />} path="/bebidas" />
                         <Route element={<PiñaColada />} path="/pinacolada" />
+                        <Route element={<CheladaNorteña />} path="/cheladanortena" />
+                        <Route element={<AguaHorchata />} path="/aguahorchata" />
+                        <Route element={<CoctelTomateTamarindo />} path="/cocteltomatetamarindo" />
                         
                         
                         
