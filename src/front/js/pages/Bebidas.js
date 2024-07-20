@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import pinacolada from "../../img/pina-colada.png";
-import palomitaschoco from "../../img/palomitas-choco.jpg";
+import cheladanorteña from "../../img/cheladanorteña.jpg";
 import alitasman from "../../img/alitasmango.jpg";
 import botanacarnes from "../../img/botana-carnes.jpg";
 
@@ -23,7 +23,7 @@ export const Bebidas = () => {
           <div className="card-body">
             <h5 className="card-title"><strong>Piña colada</strong></h5>
             <p>
-				<img src={pinacolada} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={pinacolada} className="img-fluid rounded-circle" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
 			</p>
             <p className="card-text">Receta de piña colada.</p>
             <Link to="/pinacolada">
@@ -35,12 +35,12 @@ export const Bebidas = () => {
       <div className="col-md-3">
         <div className="card bg-secondary text-light bg-success">
           <div className="card-body">
-          <h5 className="card-title"><strong>Palomitas sabor chocolate</strong></h5>
+          <h5 className="card-title"><strong>Chelada Norteña</strong></h5>
             <p>
-				<img src={palomitaschoco} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={cheladanorteña} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
 			</p>
-            <p className="card-text">Receta de Palomitas sabor chocolate.</p>
-            <Link to="/palomitaschoco">
+            <p className="card-text">Receta de Chelada norteña.</p>
+            <Link to="/cheladanortena">
             <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
             </Link>
           </div>
