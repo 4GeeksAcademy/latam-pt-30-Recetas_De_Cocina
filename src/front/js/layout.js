@@ -33,6 +33,8 @@ import { PizzaBurguer } from "./pages/PizzaBurguer";
 import { HamburguesaTocino } from "./pages/HamburguesaTocino";
 import { TortaPavo } from "./pages/TortaPavo";
 import { HotDogPolaco } from "./pages/Hotdogpolaco";
+import { PiñaColada } from "./pages/PiñaColada";
+
 
 
 import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
@@ -40,6 +42,7 @@ import { Desayunos } from "./pages/Desayunos";
 import { Snacks } from "./pages/Snacks";
 import { Pizzas } from "./pages/Pizzas";
 import { FastFood } from "./pages/FastFood";
+import { Bebidas } from "./pages/Bebidas";
 
 import { Comidas } from "./pages/Comidas";
 import { Cenas} from "./pages/Cenas";
@@ -92,6 +95,8 @@ const Layout = () => {
                         <Route element={<HamburguesaTocino />} path="/hamburguesatocino" />
                         <Route element={<TortaPavo />} path="/tortapavo" />
                         <Route element={<HotDogPolaco />} path="/hotdogpolaco" />
+                        <Route element={<Bebidas />} path="/bebidas" />
+                        <Route element={<PiñaColada />} path="/pinacolada" />
                         
                         
                         
