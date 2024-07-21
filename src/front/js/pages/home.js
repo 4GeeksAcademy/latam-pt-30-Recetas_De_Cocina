@@ -7,7 +7,10 @@ import recetasImageUr3 from "../../img/recetas 3.jpg";
 import recetasPostres from "../../img/postres.jpg";
 import recetasDesayunos from "../../img/Desayunos.jpeg";
 import recetasAlmuerzos from "../../img/almuerzos.jpg";
+import calendario from "../../img/calendario.png";
 import recetascena from "../../img/cena.jpg";
+import formulario from "../../img/crearecets.jpg";
+import favo from "../../img/favo.png";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -35,6 +38,46 @@ export const Home = () => {
         <h3><strong>Culinarias</strong></h3>
 			
 			</div>
+
+      <p></p>
+      <p></p>
+
+      <div class="card-group">
+  <div class="card card border-success mb-3">
+  <div class="card-header border-success text-success"><h4 class="card-title"><strong>Plan semanal</strong></h4></div>
+  <p></p>
+  <img src={calendario} class="mx-auto" alt="Card image cap" style={{maxWidth: "9rem", maxHeight: "9rem"}} />
+  <p></p>
+    <div class="card-body text-success">
+      <p class="card-text"><strong>Aqui podras crear tu plan seamanal para tus comidas dependiedo de tus gustos, dieta y alimentación nutricional.</strong></p>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-regular fa-calendar"></i></button>
+    </div>
+  </div>
+  <div class="card card border-success mb-3">
+  <div class="card-header border-success text-success"><h4 class="card-title"><strong>Crea tu receta</strong></h4></div>
+  <img src={formulario} class="mx-auto" alt="Card image cap" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+    <div class="card-body text-success ">
+    <p></p>
+      <p class="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+  </div>
+  <div class="card card border-success mb-3">
+  <div class="card-header border-success text-success"><h4 class="card-title"><strong>Plan semanal</strong></h4></div>
+  <p></p>
+  <img src={favo} class="mx-auto" alt="Card image cap" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+    <div class="card-body text-success">
+    <p></p>
+      <p class="card-text"><strong>Aqui podras entrar y visitar tus recetas favoritas cada vez que lo desees.</strong></p>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-heart"></i></button>
+    </div>
+  </div>
+</div>
+
+ <p></p>
+      <p></p>
+
+
 			</div>
 			<div className="container my-5">
     <div className="row">
