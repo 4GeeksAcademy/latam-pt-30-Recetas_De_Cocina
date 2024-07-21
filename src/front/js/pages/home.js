@@ -63,7 +63,7 @@ export const Home = () => {
     </div>
   </div>
   <div class="card card border-success mb-3">
-  <div class="card-header border-success text-success"><h4 class="card-title"><strong>Plan semanal</strong></h4></div>
+  <div class="card-header border-success text-success"><h4 class="card-title"><strong>Recetas favoritas</strong></h4></div>
   <p></p>
   <img src={favo} class="mx-auto" alt="Card image cap" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
     <div class="card-body text-success">
