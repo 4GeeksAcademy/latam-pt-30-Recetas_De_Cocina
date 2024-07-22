@@ -58,9 +58,5 @@ class User(db.Model):
     sodio = column(Float)
 
     
-
-
-    
-    
     
     """
