@@ -40,6 +40,13 @@ import { CheladaNorteña } from "./pages/CheladaNorteña";
 import { AguaHorchata } from "./pages/AguaHorchata";
 import { CoctelTomateTamarindo } from "./pages/CoctelTomate";
 import { PlanSemanal } from "./pages/PlanSemanal";
+import { Lunes } from "./pages/Lunes";
+import { Martes } from "./pages/Martes";
+import { Miercoles } from "./pages/Miercoles";
+import { Jueves } from "./pages/Jueves";
+import { Viernes } from "./pages/Viernes";
+import { Sabado } from "./pages/Sabado";
+import { Domingo } from "./pages/Domingo";
 
 
 
@@ -108,6 +115,13 @@ const Layout = () => {
                         <Route element={<AguaHorchata />} path="/aguahorchata" />
                         <Route element={<CoctelTomateTamarindo />} path="/cocteltomatetamarindo" />
                         <Route element={<PlanSemanal />} path="/plansemanal" />
+                        <Route element={<Lunes />} path="/Lunes" />
+                        <Route element={<Martes />} path="/Martes" />
+                        <Route element={<Miercoles />} path="/Miercoles" />
+                        <Route element={<Jueves />} path="/Jueves" />
+                        <Route element={<Viernes />} path="/Viernes" />
+                        <Route element={<Sabado />} path="/Sabado" />
+                        <Route element={<Domingo />} path="/Domingo" />
                         
                         
                         

@@ -33,9 +33,11 @@ export const PlanSemanal = () => {
     <p></p>
   <p></p>
       <p class="card-text"><strong>Desayuno, comida y cena del dia lunes.</strong></p>
-      <Link to="/desayunos">
+      
+      <Link to="/lunes">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
       </Link>
+      
     </div>
   </div>
   <div class="card card border-success mb-3">
@@ -50,7 +52,9 @@ export const PlanSemanal = () => {
   <p></p>
 
       <p class="card-text"><strong>Desayuno, comida y cena del dia martes.</strong>.</p>
+      <Link to="/Martes">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
 
@@ -66,7 +70,9 @@ export const PlanSemanal = () => {
     <p></p>
     
       <p class="card-text"><strong>Desayuno, comida y cena del dia miercoles.</strong></p>
+      <Link to="/Miercoles">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
 
@@ -80,7 +86,9 @@ export const PlanSemanal = () => {
     <img src={jueves} className="mx-auto img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "13rem"}} />
     <p></p>
       <p class="card-text"><strong>Desayuno, comida y cena del dia jueves.</strong></p>
+      <Link to="/Jueves">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
 
@@ -93,7 +101,9 @@ export const PlanSemanal = () => {
     <img src={viernes} className="mx-auto img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "13rem"}} />
     <p></p>
       <p class="card-text"><strong>Desayuno, comida y cena del dia viernes.</strong></p>
+      <Link to="/Viernes">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
 
@@ -106,7 +116,9 @@ export const PlanSemanal = () => {
     <img src={sabado} className="mx-auto img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "13rem"}} />
     <p></p>
       <p class="card-text"><strong>Desayuno, comida y cena del dia sabado.</strong></p>
+      <Link to="/Sabado">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
 
@@ -119,7 +131,9 @@ export const PlanSemanal = () => {
     <div class="card-body  text-bg-dark">
     <p></p>
       <p class="card-text"><strong>Desayuno, comida y cena del dia domingo.</strong></p>
+      <Link to="/Domingo">
       <button class="btn btn-secondary bg-dark" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
   
