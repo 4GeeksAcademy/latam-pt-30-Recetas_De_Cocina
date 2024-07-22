@@ -14,6 +14,7 @@ import { Flannapolitano } from "./pages/FlanNapolitano"
 import { Carlota } from "./pages/Carlota"
 import { Brownie } from "./pages/Brownie"
 import { ArrozConLeche } from "./pages/ArrozConLeche"
+import { TresLeches } from "./pages/TresLeches";
 import { Chilaquiles } from "./pages/Chilaquiles";
 import { Enchiladas } from "./pages/Enchiladas";
 import { PastaMarinera } from "./pages/PastaMarinera";
@@ -35,6 +36,9 @@ import { HamburguesaTocino } from "./pages/HamburguesaTocino";
 import { TortaPavo } from "./pages/TortaPavo";
 import { HotDogPolaco } from "./pages/Hotdogpolaco";
 import { PiñaColada } from "./pages/PiñaColada";
+import { CheladaNorteña } from "./pages/CheladaNorteña";
+import { AguaHorchata } from "./pages/AguaHorchata";
+import { CoctelTomateTamarindo } from "./pages/CoctelTomate";
 
 
 
@@ -99,6 +103,9 @@ const Layout = () => {
                         <Route element={<HotDogPolaco />} path="/hotdogpolaco" />
                         <Route element={<Bebidas />} path="/bebidas" />
                         <Route element={<PiñaColada />} path="/pinacolada" />
+                        <Route element={<CheladaNorteña />} path="/cheladanortena" />
+                        <Route element={<AguaHorchata />} path="/aguahorchata" />
+                        <Route element={<CoctelTomateTamarindo />} path="/cocteltomatetamarindo" />
                         
                         
                         
@@ -108,6 +115,7 @@ const Layout = () => {
                         <Route element={<Carlota  />} path="/carlota" />
                         <Route element={<Brownie  />} path="/brownie" />
                         <Route element={<ArrozConLeche  />} path="/Arrozconleche" />
+                        <Route element={<TresLeches />} path="/TresLeches" />
                         <Route element={<Panfrances />} path="/Panfrances" />
                         <Route element={<Omelettes/>} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />

@@ -4,6 +4,7 @@ import FlanNapolitano from "../../img/FlanNapolitano.jpg";
 import carlota from "../../img/carlota.jpg";
 import brownie from "../../img/brownie.jpg";
 import Arrozconleche from "../../img/Arrozconleche.jpg";
+import tresleches from "../../img/tresleches.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -74,6 +75,23 @@ export const Postre = () => {
           </div>
         </div>
       </div>
+
+      <div className="col-md-3 mt-4">
+        <div className="card bg-secondary text-light bg-dark">
+          <div className="card-body">
+          <h5 className="card-title"><strong>Tres Leches</strong></h5>
+            <p>
+				<img src={tresleches} className="img-fluid rounded-circle" style={{maxWidth: "10.5rem", maxHeight: "10.5rem"}} />
+			</p>
+            <p className="card-text">Receta de Tres Leches.</p>
+            <Link to="/TresLeches">
+            <a href="#" className="btn btn-secondary bg-success ">Ver recetas</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 			
