@@ -1,10 +1,10 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint, render_remplate
+from flask import Flask, request, jsonify, url_for, Blueprint, render_template # type: ignore
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
-from flask_cors import CORS
+from flask_cors import CORS # type: ignore
 
 api = Blueprint('api', __name__)
 
@@ -21,7 +21,6 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-@api.route('/signup', methods=['POST','GET'])
-def registro(): 
-    return
-
+@api.route("/signup", methods=["POST", 'GET'])
+def registro():
+    return 
