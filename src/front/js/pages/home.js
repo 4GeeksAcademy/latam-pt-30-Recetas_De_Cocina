@@ -50,7 +50,9 @@ export const Home = () => {
   <p></p>
     <div class="card-body text-success">
       <p class="card-text"><strong>Aqui podras crear tu plan seamanal para tus comidas dependiedo de tus gustos, dieta y alimentación nutricional.</strong></p>
+      <Link to="/plansemanal">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
   <div class="card card border-success mb-3">

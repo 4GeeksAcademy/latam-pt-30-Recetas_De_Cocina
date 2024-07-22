@@ -39,6 +39,7 @@ import { PiñaColada } from "./pages/PiñaColada";
 import { CheladaNorteña } from "./pages/CheladaNorteña";
 import { AguaHorchata } from "./pages/AguaHorchata";
 import { CoctelTomateTamarindo } from "./pages/CoctelTomate";
+import { PlanSemanal } from "./pages/PlanSemanal";
 
 
 
@@ -106,6 +107,7 @@ const Layout = () => {
                         <Route element={<CheladaNorteña />} path="/cheladanortena" />
                         <Route element={<AguaHorchata />} path="/aguahorchata" />
                         <Route element={<CoctelTomateTamarindo />} path="/cocteltomatetamarindo" />
+                        <Route element={<PlanSemanal />} path="/plansemanal" />
                         
                         
                         
