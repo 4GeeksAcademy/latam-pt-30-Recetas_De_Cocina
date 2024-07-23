@@ -61,7 +61,9 @@ export const Home = () => {
     <div class="card-body text-success ">
     <p></p>
       <p class="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
+      <Link to="/creareceta">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+      </Link>
     </div>
   </div>
   <div class="card card border-success mb-3">
@@ -71,7 +73,9 @@ export const Home = () => {
     <div class="card-body text-success">
     <p></p>
       <p class="card-text"><strong>Aqui podras entrar y visitar tus recetas favoritas cada vez que lo desees.</strong></p>
+      <Link to="/recetafavorita">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-heart"></i></button>
+      </Link>
     </div>
   </div>
 </div>

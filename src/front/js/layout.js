@@ -47,6 +47,8 @@ import { Jueves } from "./pages/Jueves";
 import { Viernes } from "./pages/Viernes";
 import { Sabado } from "./pages/Sabado";
 import { Domingo } from "./pages/Domingo";
+import { CreaReceta } from "./pages/CreaReceta";
+import { RecetaFavorita } from "./pages/RecetasFavoritas";
 
 
 
@@ -122,6 +124,8 @@ const Layout = () => {
                         <Route element={<Viernes />} path="/Viernes" />
                         <Route element={<Sabado />} path="/Sabado" />
                         <Route element={<Domingo />} path="/Domingo" />
+                        <Route element={<CreaReceta />} path="/creareceta" />
+                        <Route element={<RecetaFavorita />} path="/recetafavorita" />
                         
                         
                         
