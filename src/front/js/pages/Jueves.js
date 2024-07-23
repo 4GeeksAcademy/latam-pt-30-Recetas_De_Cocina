@@ -58,7 +58,7 @@ export const Jueves = () => {
         
 			<br />
 			<Link to="/plansemanal">
-				<button className="btn btn-secondary bg-dark">Ver mas</button>
+				<button className="btn btn-secondary bg-dark">Regresar</button>
 			</Link>
 		</div>
         
