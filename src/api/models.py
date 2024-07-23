@@ -20,43 +20,41 @@ class User(db.Model):
 
         
         
-        
-    """" 
-    Class Categoria(Base)
-    __tablename = "categoria"
-    id = column(integer, primary_key=True)
-    platos = column(string(50))
-
-    Class Plato(Base)
-    __tablename = "plato"
-    id = column(integer, primary_key=True)
-    nombre = column(string(50))
+class Categoria(db.Model):
     
+    id = db.Column(db.Integer, primary_key=True)
+    platos = db.Column(db.String(50))
 
-    Class Ingredientes(Base)
-    __tablename = "ingredientes"
-    id = column(integer, primary_key=True)
-    nombre = column(String(250), nullable=False)
-    cantidad = column(Float, nullable=False)
-
-     Class Pasos(Base)
-    __tablename = "pasos"
-    id = column(integer, primary_key=True)
-    description = column(string(50))
-
-     Class InformacionNutritiva(Base)
-    __tablename = "informacion_nutritiva"
-    id = column(integer, primary_key=True)
-    calorias = column(Float, nullable=False)
-    carbohidratos = column(Float, nullable=False)
-    energia = column(Float)
-    grasa = column(Float)
-    proteina = column(Float)
-    fibra = column(Float)
-    azucares = column(Float, nullable=False)
-    grasas saturadas = column(Float)
-    sodio = column(Float)
-
+class Plato(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(50))
     
     
-    """
+
+class Ingredientes(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(250), nullable=False)
+    cantidad = db.Column(db.Float, nullable=False)
+
+class Pasos(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(50))
+
+class InformacionNutritiva(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    calorias = db.Column(db.Float, nullable=False)
+    carbohidratos = db.Column(db.Float, nullable=False)
+    energia = db.Column(db.Float)
+    grasa = db.Column(db.Float)
+    proteina = db.Column(db.Float)
+    fibra = db.Column(db.Float)
+    azucares = db.Column(db.Float, nullable=False)
+    grasas_saturadas = db.Column(db.Float)
+    sodio = db.Column(db.Float)
+
+    
+    
