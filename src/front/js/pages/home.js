@@ -50,7 +50,9 @@ export const Home = () => {
   <p></p>
     <div class="card-body text-success">
       <p class="card-text"><strong>Aqui podras crear tu plan seamanal para tus comidas dependiedo de tus gustos, dieta y alimentación nutricional.</strong></p>
+      <Link to="/plansemanal">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-regular fa-calendar"></i></button>
+      </Link>
     </div>
   </div>
   <div class="card card border-success mb-3">
@@ -59,7 +61,9 @@ export const Home = () => {
     <div class="card-body text-success ">
     <p></p>
       <p class="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
+      <Link to="/creareceta">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+      </Link>
     </div>
   </div>
   <div class="card card border-success mb-3">
@@ -69,7 +73,9 @@ export const Home = () => {
     <div class="card-body text-success">
     <p></p>
       <p class="card-text"><strong>Aqui podras entrar y visitar tus recetas favoritas cada vez que lo desees.</strong></p>
+      <Link to="/recetafavorita">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-heart"></i></button>
+      </Link>
     </div>
   </div>
 </div>
@@ -100,7 +106,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Desayunos</strong></h5>
             <p>
-				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "9.5rem", maxHeight: "10rem"}} />
 			</p>
             <p className="card-text">Comienza tu día con energía.</p>
             <Link to="/desayunos">
@@ -114,7 +120,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Comidas</strong></h5>
             <p>
-				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "12.5rem", maxHeight: "13rem"}} />
 			</p>
             <p className="card-text">Recetas para una comida completa.</p>
             <Link to="/comidas">
@@ -128,7 +134,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Cenas</strong></h5>
             <p>
-				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14.5rem", maxHeight: "14.5rem"}} />
+				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14.5rem"}} />
 			</p>
             <p className="card-text">Recetas de cenas deliciosas.</p>
             <Link to="/cenas">

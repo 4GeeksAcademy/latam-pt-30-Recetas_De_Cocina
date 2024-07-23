@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
+import { Registro } from "./component/signup";
 
 
 import { Home } from "./pages/home";
@@ -38,6 +39,16 @@ import { PiñaColada } from "./pages/PiñaColada";
 import { CheladaNorteña } from "./pages/CheladaNorteña";
 import { AguaHorchata } from "./pages/AguaHorchata";
 import { CoctelTomateTamarindo } from "./pages/CoctelTomate";
+import { PlanSemanal } from "./pages/PlanSemanal";
+import { Lunes } from "./pages/Lunes";
+import { Martes } from "./pages/Martes";
+import { Miercoles } from "./pages/Miercoles";
+import { Jueves } from "./pages/Jueves";
+import { Viernes } from "./pages/Viernes";
+import { Sabado } from "./pages/Sabado";
+import { Domingo } from "./pages/Domingo";
+import { CreaReceta } from "./pages/CreaReceta";
+import { RecetaFavorita } from "./pages/RecetasFavoritas";
 
 
 
@@ -75,6 +86,7 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        <Route element={<Registro/>} path="/signup" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Enchiladas />} path="/enchiladas" />
@@ -104,6 +116,16 @@ const Layout = () => {
                         <Route element={<CheladaNorteña />} path="/cheladanortena" />
                         <Route element={<AguaHorchata />} path="/aguahorchata" />
                         <Route element={<CoctelTomateTamarindo />} path="/cocteltomatetamarindo" />
+                        <Route element={<PlanSemanal />} path="/plansemanal" />
+                        <Route element={<Lunes />} path="/Lunes" />
+                        <Route element={<Martes />} path="/Martes" />
+                        <Route element={<Miercoles />} path="/Miercoles" />
+                        <Route element={<Jueves />} path="/Jueves" />
+                        <Route element={<Viernes />} path="/Viernes" />
+                        <Route element={<Sabado />} path="/Sabado" />
+                        <Route element={<Domingo />} path="/Domingo" />
+                        <Route element={<CreaReceta />} path="/creareceta" />
+                        <Route element={<RecetaFavorita />} path="/recetafavorita" />
                         
                         
                         
