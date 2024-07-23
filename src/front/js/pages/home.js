@@ -106,7 +106,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Desayunos</strong></h5>
             <p>
-				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
+				<img src={recetasDesayunos} className="img-fluid rounded-circle" style={{maxWidth: "9.5rem", maxHeight: "10rem"}} />
 			</p>
             <p className="card-text">Comienza tu día con energía.</p>
             <Link to="/desayunos">
@@ -120,7 +120,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Comidas</strong></h5>
             <p>
-				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "13rem", maxHeight: "13rem"}} />
+				<img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{maxWidth: "12.5rem", maxHeight: "13rem"}} />
 			</p>
             <p className="card-text">Recetas para una comida completa.</p>
             <Link to="/comidas">
@@ -134,7 +134,7 @@ export const Home = () => {
           <div className="card-body">
           <h5 className="card-title"><strong>Cenas</strong></h5>
             <p>
-				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14.5rem", maxHeight: "14.5rem"}} />
+				<img src={recetascena} className="img-fluid rounded-circle" style={{maxWidth: "14rem", maxHeight: "14.5rem"}} />
 			</p>
             <p className="card-text">Recetas de cenas deliciosas.</p>
             <Link to="/cenas">
