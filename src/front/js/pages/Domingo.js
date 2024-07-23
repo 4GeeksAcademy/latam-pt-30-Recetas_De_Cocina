@@ -33,7 +33,7 @@ export const Domingo = () => {
         <div class="card"  >
         
   <div class="card-body">
-    <h5 class="card-title">Comida</h5>
+    <h5 class="card-title"><strong>Comida</strong></h5>
     <p class="card-text">Deliciosa comida del día.</p>
     <a href="#" class="btn btn-success bg-dark"><i class="fa-solid fa-plus"></i></a>
   </div>
@@ -46,7 +46,7 @@ export const Domingo = () => {
         <div class="card"  >
         
   <div class="card-body">
-    <h5 class="card-title">Cena</h5>
+    <h5 class="card-title"><strong>Cena</strong></h5>
     <p class="card-text">Deliciosa cena del día.</p>
     <a href="#" class="btn btn-success bg-dark"><i class="fa-solid fa-plus"></i></a>
   </div>
