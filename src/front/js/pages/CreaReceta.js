@@ -37,31 +37,31 @@ export const CreaReceta = () => {
 				
 			 <div className= "mb-3">
                     <label htmlFor="inputPlatillo" className="form-label"><h5><strong>Platillo</strong></h5></label>
-                    <input required type="text" name="Platillo" className="form-control border-success" id="inputPlatillo" 
+                    <input required type="text" name="Platillo" className="form-control form-control-lg border-success" id="inputPlatillo" 
                         placeholder="Agrega nombre de Platillo" value={Platillo} onChange={(event) => {setPlatillo(event.target.value)}}/>
                 </div>
 
 				<div className="mb-3">
                     <label htmlFor="inputIngredientes" className="form-label"><h5><strong>Ingredientes</strong></h5></label>
-                    <textarea required type="text" className="form-control border-success" id="Ingredientes"
+                    <textarea required type="text" className="form-control form-control-lg border-success" id="Ingredientes"
                         placeholder="Agrega Ingredientes"  value={Ingredientes} onChange={(event) => {setIngrdientes(event.target.value)}}/>
                 </div>
 
 				<div className="mb-3">
                     <label htmlFor="inputPasos" className="form-label"><h5><strong>Pasos</strong></h5></label>
-                    <textarea required type="text" className="form-control border-success" id="Pasos"
+                    <textarea required type="text" className="form-control form-control-lg border-success" id="Pasos"
                         placeholder="Agrega Pasos de preparación" value={Pasos} onChange={(event) => {setPasos(event.target.value)}}/>
                 </div>
 
 				<div className="mb-3">
                     <label htmlFor="inputInfoNutri" className="form-label"><h5><strong>información nutricional</strong></h5></label>
-                    <textarea required type="text" className="form-control border-success" id="InfoNutri"
+                    <textarea required type="text" className="form-control form-control-lg border-success" id="InfoNutri"
                         placeholder="Agrega la información nutricional" value={InfoNutri} onChange={(event) => {setInfoNutri(event.target.value)}}/>
                 </div>
 
 				<div className="mb-3">
                     <label htmlFor="inputImage" className="form-label"><h5><strong>Importar imagen</strong></h5></label>
-                    <input type="file" className="form-control border-success" id="Image"
+                    <input type="file" className="form-control form-control-lg border-success" id="Image"
                         placeholder="" value={Image} onChange={(event) => {setImage(event.target.value)}}/>
                 </div>
 
