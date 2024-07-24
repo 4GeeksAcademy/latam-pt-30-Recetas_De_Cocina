@@ -6,6 +6,7 @@ import jueves from "../../img/Jueves.png";
 import viernes from "../../img/viernes.png";
 import sabado from "../../img/Sabado.png";
 import Domingo from "../../img/Domingo.png";
+import calendario from "../../img/calendario.png";
 
 import { Context } from "../store/appContext";
 
@@ -17,6 +18,7 @@ export const PlanSemanal = () => {
 			<div className="text-center mt-5">
 			 <header className="text-center py-5">
              <h1><strong>Plan Semanal</strong></h1>
+             <img src={calendario} class="mx-auto" alt="Card image cap" style={{maxWidth: "9rem", maxHeight: "9rem"}} />
              </header>
 		</div>
 
