@@ -6,6 +6,7 @@ from flask import Flask, request, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from api.utils import APIException, generate_sitemap
+from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva
 from api.models import db
 from api.routes import api
 from api.admin import setup_admin
@@ -68,7 +69,33 @@ def serve_any_other_file(path):
     return response
 
 
-# this only runs if `$ python src/main.py` is executed
+@app.route('/hello', methods=['POST', 'GET'])
+def handle_hello():
+
+    response_body = {
+        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
+    }
+
+    return jsonify(response_body), 200
+
+@app.route("/signup", methods=["POST", 'GET'])
+def registro():
+    return 
+
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3001))
     app.run(host='0.0.0.0', port=PORT, debug=True)
+    
+ 
+
+
+
+
+# Verificar que los datos necesarios están presentes
+    """required_fields = ["nombre", "categoria", "ingredientes", "pasos", "informacion_nutritiva"]
+    for field in required_fields:
+        if field not in data:
+            return jsonify({"message": f"{field} is required"}), 400"""
+
+
+# this only runs if `$ python src/main.py` is executed
