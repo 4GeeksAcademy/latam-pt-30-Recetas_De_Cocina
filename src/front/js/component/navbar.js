@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cheff from "../../img/cheff.jpeg";
 
 
 export const Navbar = () => {
@@ -9,7 +10,7 @@ export const Navbar = () => {
 			<div className="container-fluid">
 				<Link to="/">
 				<span className="navbar-brand mb-0 h1 ms-5">
-					<img src="https://factoryfy.es/wp-content/uploads/dise%C3%B1o-logo-blog-cocina.jpg" className="img-fluid rounded-circle" style={{maxWidth: "7rem", maxHeight: "7rem"}}/>
+					<img src={cheff} className="img-fluid rounded-circle" style={{maxWidth: "7rem", maxHeight: "7rem"}}/>
 				</span>
 				</Link>
 				<form class="form-inline my-2 my-lg-0">
