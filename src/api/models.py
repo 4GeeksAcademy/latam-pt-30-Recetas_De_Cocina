@@ -23,25 +23,35 @@ class User(db.Model):
 class Categoria(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
-    platos = db.Column(db.String(50))
+    nombre = db.Column(db.String(250))
+    plato = db.relationship('Plato', uselist=False, back_populates='categoria')
 
 class Plato(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(50))
-    
+    nombre = db.Column(db.String(250))
+    categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
+    categoria = db.relationship('Categoria', back_populates='plato')
+    ingredientes = db.relationship('Ingrediente', back_populates='plato')
+    informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
+    pasos = db.relationship('Paso', back_populates='plato')
     
 
-class Ingredientes(db.Model):
+class Ingrediente(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), nullable=False)
     cantidad = db.Column(db.Float, nullable=False)
+    plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
+    plato = db.relationship('Plato', back_populates='ingredientes')
 
-class Pasos(db.Model):
+class Paso(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(50))
+    numero_de_paso = db.Column(db.Integer)
+    description = db.Column(db.String(500))
+    plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
+    plato = db.relationship('Plato', back_populates='pasos')
 
 class InformacionNutritiva(db.Model):
     
@@ -55,6 +65,7 @@ class InformacionNutritiva(db.Model):
     azucares = db.Column(db.Float, nullable=False)
     grasas_saturadas = db.Column(db.Float)
     sodio = db.Column(db.Float)
-
+    plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
+    plato = db.relationship('Plato', back_populates='informacion_nutritiva')
     
     

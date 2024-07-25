@@ -1,0 +1,12 @@
+                List of relations
+ Schema |         Name          | Type  | Owner  
+--------+-----------------------+-------+--------
+ public | alembic_version       | table | gitpod
+ public | categoria             | table | gitpod
+ public | informacion_nutritiva | table | gitpod
+ public | ingredientes          | table | gitpod
+ public | pasos                 | table | gitpod
+ public | plato                 | table | gitpod
+ public | user                  | table | gitpod
+(7 rows)
+

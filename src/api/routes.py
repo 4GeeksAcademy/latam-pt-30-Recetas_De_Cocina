@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, render_template # type: ignore
-from api.models import db, User
+from api.models import Paso, db, User, Plato
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
 
@@ -24,3 +24,39 @@ def handle_hello():
 @api.route("/signup", methods=["POST", 'GET'])
 def registro():
     return 
+
+ #primer plato
+@api.route('/postres', methods=['POST'])
+def create_plato():
+    data = request.json
+    if data.get("name") is None:
+        return jsonify({"message": "name is required"}), 400
+
+    new_receta = Plato(),
+    new_is_active=True  
+    db.session.add(new_receta)
+    db.session.commit()
+
+    return jsonify({
+        "message": "Receta creada",
+        "recipe_id": new_receta.id
+    }), 201
+
+@api.route('/postres', methods=['POST'])
+def create_pasos():
+    data = request.json
+    if data.get("description") is None:
+        return jsonify({"message": "description is required"}), 400
+
+    new_description = Pasos(),
+    new_is_active=True  
+    db.session.add(new_description)
+    db.session.commit()
+
+    return jsonify({
+        "message": "Receta creada",
+        "recipe_id": new_description.id
+    }), 201
+
+
+  
