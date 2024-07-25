@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, render_template # type: ignore
-from api.models import Paso, db, User, Plato
+from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
 
@@ -25,38 +25,54 @@ def handle_hello():
 def registro():
     return 
 
- #primer plato
-@api.route('/postres', methods=['POST'])
-def create_plato():
+ 
+@api.route('/recetas', methods=['POST'])
+def create_receta():
     data = request.json
-    if data.get("name") is None:
-        return jsonify({"message": "name is required"}), 400
 
-    new_receta = Plato(),
-    new_is_active=True  
-    db.session.add(new_receta)
+    # Verificar que los datos necesarios están presentes
+    required_fields = ["nombre", "categoria", "ingredientes", "pasos", "informacion_nutritiva"]
+    for field in required_fields:
+        if field not in data:
+            return jsonify({"message": f"{field} is required"}), 400
+
+    # Crear la categoría si no existe
+    categoria = Categoria.query.filter_by(nombre=data["categoria"]).first()
+    if not categoria:
+        categoria = Categoria(nombre=data["categoria"])
+        db.session.add(categoria)
+        db.session.commit()
+
+    # Crear el plato
+    new_plato = Plato(nombre=data["nombre"], categoria_id=categoria.id)
+    db.session.add(new_plato)
     db.session.commit()
 
-    return jsonify({
-        "message": "Receta creada",
-        "recipe_id": new_receta.id
-    }), 201
+    # Crear los ingredientes
+    for ing in data["ingredientes"]:
+        ingrediente = Ingrediente(nombre=ing["nombre"], cantidad=ing["cantidad"], plato_id=new_plato.id)
+        db.session.add(ingrediente)
 
-@api.route('/postres', methods=['POST'])
-def create_pasos():
-    data = request.json
-    if data.get("description") is None:
-        return jsonify({"message": "description is required"}), 400
+    # Crear los pasos
+    for paso in data["pasos"]:
+        nuevo_paso = Paso(numero_de_paso=paso["numero_de_paso"], description=paso["description"], plato_id=new_plato.id)
+        db.session.add(nuevo_paso)
 
-    new_description = Pasos(),
-    new_is_active=True  
-    db.session.add(new_description)
+    # Crear la información nutritiva
+    info_nutritiva = InformacionNutritiva(
+        calorias=data["informacion_nutritiva"]["calorias"],
+        carbohidratos=data["informacion_nutritiva"]["carbohidratos"],
+        energia=data["informacion_nutritiva"]["energia"],
+        grasa=data["informacion_nutritiva"]["grasa"],
+        proteina=data["informacion_nutritiva"]["proteina"],
+        fibra=data["informacion_nutritiva"]["fibra"],
+        azucares=data["informacion_nutritiva"]["azucares"],
+        grasas_saturadas=data["informacion_nutritiva"]["grasas_saturadas"],
+        sodio=data["informacion_nutritiva"]["sodio"],
+        plato_id=new_plato.id
+    )
+    db.session.add(info_nutritiva)
+
     db.session.commit()
 
-    return jsonify({
-        "message": "Receta creada",
-        "recipe_id": new_description.id
-    }), 201
-
-
-  
+    return jsonify({"message": "Receta creada", "recipe_id": new_plato.id}), 201
