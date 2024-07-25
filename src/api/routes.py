@@ -12,7 +12,29 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
+@api.route('/signup', methods=['POST'])
+def create_user():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
 
+    if None in [email, password]:
+        return jsonify({"message": "email and password are required"}), 400
+    
+    user_already_exists = db.session.execute(db.select(User).filter_by(email=email)).one_or_none()
+    if user_already_exists:
+        return jsonify({"message": "invalid email"}), 400
+
+    new_user = User(email=email, password=password, is_active=True)
+    try:
+        db.session.add(new_user)
+        db.session.commit()
+    except Exception as error:
+        print(error)
+        db.session.rollback()
+        return jsonify({"message": "DB error"}), 500
+    
+    return jsonify ({"message":"User registered succesfully"}), 200
 
 @api.route('/recetas', methods=['POST'])
 def create_receta():
