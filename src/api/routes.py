@@ -56,7 +56,7 @@ def create_receta():
             proteina=data["informacion_nutritiva"]["proteina"],
             fibra=data["informacion_nutritiva"]["fibra"],
             azucares=data["informacion_nutritiva"]["azucares"],
-            grasas_saturadas=data["informacion_nutritiva"]["grasas_saturadas"],
+            grasas_saturadas=data["informacion_nutritiva"]["grasas_saturadas"],  
             sodio=data["informacion_nutritiva"]["sodio"],
             plato_id=new_plato.id
         )
