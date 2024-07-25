@@ -5,6 +5,9 @@ from flask import Flask, request, jsonify, url_for, Blueprint, render_template #
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
 from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva
+from flask_jwt_extended import JWTManager
+from flask_jwt_extended import create_access_token
+
 
 
 api = Blueprint('api', __name__)
@@ -12,6 +15,7 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
+#REGISTRO DE USUARIO
 @api.route('/signup', methods=['POST'])
 def create_user():
     data = request.json
@@ -35,6 +39,25 @@ def create_user():
         return jsonify({"message": "DB error"}), 500
     
     return jsonify ({"message":"User registered succesfully"}), 200
+
+#INICIO DE SESION DEL USUARIO
+@api.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+
+    if not email or not password:
+        return jsonify({"message": "email and password are required"}), 400
+    
+    user = User.query.filter_by(email=email).first()
+
+    if user is None or user.password != password:
+        return jsonify({"message": "invalid credentials"}), 401
+    
+    token = create_access_token(identity=user.id)
+
+    return jsonify({"token": token}), 201
 
 @api.route('/recetas', methods=['POST'])
 def create_receta():
