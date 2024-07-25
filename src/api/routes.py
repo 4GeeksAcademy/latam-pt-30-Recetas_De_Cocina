@@ -6,6 +6,7 @@ from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
 from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva
 
+
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
