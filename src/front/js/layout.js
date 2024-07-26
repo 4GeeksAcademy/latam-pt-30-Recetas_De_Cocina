@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import { Signup } from "./pages/Signup";
 import { Login } from "./pages/Login";
+import { Private } from "./pages/Private";
 
 
 
@@ -90,6 +91,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Signup/>} path="/signup" />
                         <Route element={<Login/>} path="/login" />
+                        <Route element={<Private/>} path="/private" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Enchiladas />} path="/enchiladas" />
