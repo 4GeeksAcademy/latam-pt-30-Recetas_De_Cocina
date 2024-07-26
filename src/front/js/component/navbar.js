@@ -18,7 +18,7 @@ export const Navbar = () => {
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
 				<div className="ml-auto">
-					<Link to={'/Login'}>
+					<Link to={'/login'}>
 						<button className="btn btn-secondary ">Iniciar Sesión</button>
 					</Link>
 				</div>
