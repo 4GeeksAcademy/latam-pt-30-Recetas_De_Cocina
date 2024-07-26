@@ -114,3 +114,22 @@ def create_receta():
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "Error creating receta", "error": str(e)}), 500
+    
+
+    #DELETE
+@api.route('/plato/<int:plato_id>', methods=['DELETE'])
+def delete_plato(plato_id):
+    try:
+        # Buscar el plato por id
+        plato = Plato.query.get(plato_id)
+        if not plato:
+            return jsonify({"message": "Plato not found"}), 404
+
+        # Eliminar el plato
+        db.session.delete(plato)
+        db.session.commit()
+        return jsonify({"message": "Plato deleted successfully"}), 200
+
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message": "Error deleting plato", "error": str(e)}), 500 

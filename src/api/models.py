@@ -41,7 +41,7 @@ class Ingrediente(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), nullable=False)
-    cantidad = db.Column(db.Float, nullable=False)
+    cantidad = db.Column(db.String(250), nullable=False)
     plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
     plato = db.relationship('Plato', back_populates='ingredientes')
 
