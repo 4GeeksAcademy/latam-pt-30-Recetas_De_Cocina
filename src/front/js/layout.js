@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
-import { Registro } from "./component/signup";
+import { Signup } from "./pages/Signup";
+import { Login } from "./pages/Login";
+
 
 
 import { Home } from "./pages/home";
@@ -86,7 +88,8 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Registro/>} path="/signup" />
+                        <Route element={<Signup/>} path="/signup" />
+                        <Route element={<Login/>} path="/Login" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Enchiladas />} path="/enchiladas" />
