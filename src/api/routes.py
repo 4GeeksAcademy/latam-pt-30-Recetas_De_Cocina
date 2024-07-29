@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+from unicodedata import category
 from flask import Flask, request, jsonify, url_for, Blueprint, render_template # type: ignore
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
@@ -115,6 +116,122 @@ def create_receta():
         db.session.rollback()
         return jsonify({"message": "Error creating receta", "error": str(e)}), 500
     
+    
+
+@api.route('/recetas', methods=['GET'])
+def get_recetas():
+    try:
+        # Obtener todas las recetas
+        platos = Plato.query.all()
+        all_recipes = []
+
+        for plato in platos:
+            # Obtener la categoría del plato
+            categoria = Categoria.query.get(plato.categoria_id)
+
+            # Obtener los ingredientes del plato
+            ingredientes = Ingrediente.query.filter_by(plato_id=plato.id).all()
+            ingredientes_list = [{"nombre": ing.nombre, "cantidad": ing.cantidad} for ing in ingredientes]
+
+            # Obtener los pasos del plato
+            pasos = Paso.query.filter_by(plato_id=plato.id).all()
+            pasos_list = [{"numero_de_paso": paso.numero_de_paso, "description": paso.description} for paso in pasos]
+
+            # Obtener la información nutritiva del plato
+            info_nutritiva = InformacionNutritiva.query.filter_by(plato_id=plato.id).first()
+            if info_nutritiva:
+                info_nutritiva_dict = {
+                    "calorias": info_nutritiva.calorias,
+                    "carbohidratos": info_nutritiva.carbohidratos,
+                    "energia": info_nutritiva.energia,
+                    "grasa": info_nutritiva.grasa,
+                    "proteina": info_nutritiva.proteina,
+                    "fibra": info_nutritiva.fibra,
+                    "azucares": info_nutritiva.azucares,
+                    "grasas_saturadas": info_nutritiva.grasas_saturadas,
+                    "sodio": info_nutritiva.sodio
+                }
+            else:
+                info_nutritiva_dict = {}
+
+            # Crear el diccionario de la receta
+            recipe_dict = {
+                "nombre": plato.nombre,
+                "categoria": categoria.nombre,
+                "ingredientes": ingredientes_list,
+                "pasos": pasos_list,
+                "informacion_nutritiva": info_nutritiva_dict
+            }
+
+            all_recipes.append(recipe_dict)
+
+        return jsonify(all_recipes), 200
+
+    except Exception as e:
+        return jsonify({"message": "Error retrieving recetas", "error": str(e)}), 500
+    
+@api.route('/categorias', methods=['GET'])
+def get_categorias():
+    try:
+        categorias = Categoria.query.all()
+        categorias_list = []
+        for categoria in categorias:
+            categorias_list.append({
+                'id': categoria.id,
+                'nombre': categoria.nombre
+            })
+        return jsonify(categorias_list), 200
+    except Exception as e:
+        return jsonify({"message": "Error fetching categorias", "error": str(e)}), 500
+    
+    
+@api.route('/plato/<int:plato_id>', methods=['GET'])
+def get_plato(plato_id):
+    try:
+        plato = Plato.query.get(plato_id)
+        all_recipes = []
+        
+
+            # Obtener los ingredientes del plato
+        ingredientes = Ingrediente.query.filter_by(plato_id=plato.id).all()
+        ingredientes_list = [{"nombre": ing.nombre, "cantidad": ing.cantidad} for ing in ingredientes]
+
+            # Obtener los pasos del plato
+        pasos = Paso.query.filter_by(plato_id=plato.id).all()
+        pasos_list = [{"numero_de_paso": paso.numero_de_paso, "description": paso.description} for paso in pasos]
+
+            # Obtener la información nutritiva del plato
+        info_nutritiva = InformacionNutritiva.query.filter_by(plato_id=plato.id).first()
+        if info_nutritiva:
+                info_nutritiva_dict = {
+                    "calorias": info_nutritiva.calorias,
+                    "carbohidratos": info_nutritiva.carbohidratos,
+                    "energia": info_nutritiva.energia,
+                    "grasa": info_nutritiva.grasa,
+                    "proteina": info_nutritiva.proteina,
+                    "fibra": info_nutritiva.fibra,
+                    "azucares": info_nutritiva.azucares,
+                    "grasas_saturadas": info_nutritiva.grasas_saturadas,
+                    "sodio": info_nutritiva.sodio
+                }
+        else:
+                info_nutritiva_dict = {}
+
+            # Crear el diccionario de la receta
+        recipe_dict = {
+                "nombre": plato.nombre,
+                "ingredientes": ingredientes_list,
+                "pasos": pasos_list,
+                "informacion_nutritiva": info_nutritiva_dict
+            }
+
+        all_recipes.append(recipe_dict)
+
+        return jsonify(all_recipes), 200
+    except Exception as e:
+        return jsonify({"message": "Error fetching categorias", "error": str(e)}), 500
+    
+
 
     #DELETE
 @api.route('/plato/<int:plato_id>', methods=['DELETE'])

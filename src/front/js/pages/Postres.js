@@ -10,6 +10,7 @@ import { Context } from "../store/appContext";
 
 export const Postre = () => {
 	const { store, actions } = useContext(Context);
+  
 
 	return (
 		<div className="container">
