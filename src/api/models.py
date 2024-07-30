@@ -1,3 +1,4 @@
+from email.policy import default
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -36,6 +37,7 @@ class Plato(db.Model):
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
     
+    favorito = db.Column(db.Boolean, default=False)
 
 class Ingrediente(db.Model):
     
