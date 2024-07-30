@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import recetasImageUrl from "../../img/recetas.jpeg";
 import recetasImageUr2 from "../../img/recetas 2.jpeg";
@@ -16,8 +16,26 @@ import get from "../utils/data";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+  const [categorias, setCategorias] = useState([]);
+  const [receta, setReceta] = useState(null);
+  const navigate = useNavigate();
 
 
+  useEffect(() => {
+    fetch('https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/categorias')
+      .then(response => response.json())
+      .then(data => {
+        setCategorias(data);
+      })
+  }, [])
+
+  const handlerRedirect = (categoria) => {
+    const receta_obj = {
+      categoria_nombre: categoria.categoria,
+      platos: categoria.platos
+    }
+    navigate('/recetas', { state: receta_obj })
+  }
 
   return (
     <div className=" container-fluid  text-center mt-5">
@@ -90,62 +108,23 @@ export const Home = () => {
       </div>
       <div className="container my-5">
         <div className="row">
-          <div className="col-md-3">
-            <div className="card bg-secondary text-light bg-dark">
-              <div className="card-body">
-                <h5 className="card-title"><strong>Postres</strong></h5>
-                <p>
-                  <img src={recetasPostres} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
-                </p>
-                <p className="card-text">Deliciosos postres para cada ocasión.</p>
-                <Link to="/postres">
-                  <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
-                </Link>
+          {categorias.map((categoria, index) => (
+            <div className="col-md-3 mt-4">
+              <div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
+                <div className="card-body">
+                  <h5 className="card-title"><strong>{categoria.categoria}</strong></h5>
+                  <p>
+                    <img src={recetasPostres} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                  </p>
+                  <p className="card-text">Deliciosos {categoria.categoria} para cada ocasión.</p>
+                  <button className="btn btn-secondary bg-success" onClick={() => handlerRedirect(categoria)}>
+                    Ver recetas
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card bg-secondary text-light bg-success">
-              <div className="card-body">
-                <h5 className="card-title"><strong>Desayunos</strong></h5>
-                <p>
-                  <img src={recetasDesayunos} className="img-fluid rounded-circle" style={{ maxWidth: "9.5rem", maxHeight: "10rem" }} />
-                </p>
-                <p className="card-text">Comienza tu día con energía.</p>
-                <Link to="/desayunos">
-                  <a href="#" className="btn btn-secondary bg-dark ">Ver recetas</a>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card bg-secondary text-light bg-dark">
-              <div className="card-body">
-                <h5 className="card-title"><strong>Comidas</strong></h5>
-                <p>
-                  <img src={recetasAlmuerzos} className="img-fluid rounded-circle" style={{ maxWidth: "12.5rem", maxHeight: "13rem" }} />
-                </p>
-                <p className="card-text">Recetas para una comida completa.</p>
-                <Link to="/comidas">
-                  <a href="#" className="btn btn-secondary bg-success">Ver recetas</a>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card bg-secondary text-light bg-success">
-              <div className="card-body">
-                <h5 className="card-title"><strong>Cenas</strong></h5>
-                <p>
-                  <img src={recetascena} className="img-fluid rounded-circle" style={{ maxWidth: "14rem", maxHeight: "14.5rem" }} />
-                </p>
-                <p className="card-text">Recetas de cenas deliciosas.</p>
-                <Link to="/cenas">
-                  <a href="#" className="btn btn-secondary bg-dark">Ver recetas</a>
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))
+          }
         </div>
       </div>
 
@@ -153,6 +132,6 @@ export const Home = () => {
         <button className="btn btn-secondary bg-dark">Ver mas</button>
       </Link>
 
-    </div>
+    </div >
   );
 };

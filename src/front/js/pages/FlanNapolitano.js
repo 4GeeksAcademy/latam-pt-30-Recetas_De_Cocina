@@ -13,7 +13,7 @@ export const Flannapolitano = () => {
     const [nutricion, setNutricion] = useState({});
 
     useEffect(() => {
-         fetch(`https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/plato/${idPlato}`)
+        fetch(`https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/plato/${idPlato}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data[0]);
@@ -67,10 +67,10 @@ export const Flannapolitano = () => {
                                 <p><strong>Proteina:</strong> {nutricion.proteina} </p>
                                 <p><strong>Sodio:</strong> {nutricion.sodio} </p>
                                 <p><strong>Grasa:</strong> {nutricion.grasa} </p>
-                                
 
 
-                                
+
+
                             </div>
                         </div>
                     </div>

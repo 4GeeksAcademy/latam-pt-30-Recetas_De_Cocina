@@ -52,10 +52,12 @@ import { Sabado } from "./pages/Sabado";
 import { Domingo } from "./pages/Domingo";
 import { CreaReceta } from "./pages/CreaReceta";
 import { RecetaFavorita } from "./pages/RecetasFavoritas";
+import { Recetas } from "./pages/Recetas";
+import { Plato } from "./pages/Plato";
 
 
 
-import { LasañaConChampiñones  } from "./pages/LasañaConChamp";
+import { LasañaConChampiñones } from "./pages/LasañaConChamp";
 import { Desayunos } from "./pages/Desayunos";
 import { Snacks } from "./pages/Snacks";
 import { Pizzas } from "./pages/Pizzas";
@@ -63,7 +65,7 @@ import { FastFood } from "./pages/FastFood";
 import { Bebidas } from "./pages/Bebidas";
 
 import { Comidas } from "./pages/Comidas";
-import { Cenas} from "./pages/Cenas";
+import { Cenas } from "./pages/Cenas";
 import { Postre } from "./pages/Postres";
 import { Omelettes } from "./pages/Omelette";
 
@@ -80,7 +82,7 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
@@ -89,9 +91,9 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Signup/>} path="/signup" />
-                        <Route element={<Login/>} path="/login" />
-                        <Route element={<Private/>} path="/private" />
+                        <Route element={<Signup />} path="/signup" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<Private />} path="/private" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Chilaquiles />} path="/Chilaquiles" />
                         <Route element={<Enchiladas />} path="/enchiladas" />
@@ -131,23 +133,25 @@ const Layout = () => {
                         <Route element={<Domingo />} path="/Domingo" />
                         <Route element={<CreaReceta />} path="/creareceta" />
                         <Route element={<RecetaFavorita />} path="/recetafavorita" />
-                        
-                        
-                        
-                        <Route element={<LasañaConChampiñones  />} path="/lasagnaC" />
+
+
+
+                        <Route element={<LasañaConChampiñones />} path="/lasagnaC" />
                         <Route element={<Hotcakes />} path="/Hotcakes" />
-                        <Route element={<Flannapolitano  />} path="/FlanNapolitano" />
-                        <Route element={<Carlota  />} path="/carlota" />
-                        <Route element={<Brownie  />} path="/brownie" />
-                        <Route element={<ArrozConLeche  />} path="/Arrozconleche" />
+                        <Route element={<Flannapolitano />} path="/FlanNapolitano" />
+                        <Route element={<Carlota />} path="/carlota" />
+                        <Route element={<Brownie />} path="/brownie" />
+                        <Route element={<ArrozConLeche />} path="/Arrozconleche" />
                         <Route element={<TresLeches />} path="/TresLeches" />
                         <Route element={<Panfrances />} path="/Panfrances" />
-                        <Route element={<Omelettes/>} path="/omelette" />
+                        <Route element={<Omelettes />} path="/omelette" />
                         <Route element={<Desayunos />} path="/desayunos" />
                         <Route element={<Cenas />} path="/cenas" />
                         <Route element={<Comidas />} path="/comidas" />
                         <Route element={<Postre />} path="/postres" />
                         <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Recetas />} path="/recetas" />
+                        <Route element={<Plato />} path="/plato" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
