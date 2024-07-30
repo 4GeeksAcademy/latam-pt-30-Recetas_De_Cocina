@@ -7,16 +7,27 @@ import { Context } from "../store/appContext";
 
 export const CenasDetails = () => {
 	const { store, actions } = useContext(Context);
+    const { uid } = useParams();
+
+    useEffect(() => {
+        actions.getCenasDetails(uid);
+    }, [uid]);
+
+    const cenas = store.cenasdetails;
+    const properties = store.singleCenasDetails;
+
+    if (!cenas) return <div>Loading...</div>;
+
 
 	return (
 		<div className="container-fluid   d-flex flex-column justify-content-center" style={{ minHeight: "100vh" }}>
                     <div className="row border-bottom border-2 pb-4 border-danger py-5">
                         <div className="col-md-6">
-                        
+                        <img src={``} alt="Cenas" className="img-fluid rounded" />
                         </div>
                         <div className="col-md-6 text-center d-flex flex-column justify-content-center">
-                    <h1><strong></strong></h1>
-                    <p><strong></strong></p>
+                    <h1><strong>{properties.name}</strong></h1>
+                    <p><strong>{cenas.description}</strong></p>
                     
                     
 
@@ -24,7 +35,7 @@ export const CenasDetails = () => {
 <div className="container">
 <div className="card text-white bg-success mb-3" >
 <div className="card-body">
-<h1><strong></strong></h1>
+<h1><strong>{cenas.pasos}</strong></h1>
                     
 </div>
 </div>
@@ -35,7 +46,7 @@ export const CenasDetails = () => {
 <div className="container">
 <div className="card text-white bg-danger mb-3" >
 <div className="card-body">
-<h3><strong></strong></h3>
+<h3><strong>{cenas.infonutri}</strong></h3>
 
 </div>
 </div>
@@ -43,7 +54,7 @@ export const CenasDetails = () => {
 
 <p></p>
 
-<Link to="/">
+<Link to="/cenas">
 				<button className="btn btn-secondary bg-dark">Regresar</button>
 			</Link>
 

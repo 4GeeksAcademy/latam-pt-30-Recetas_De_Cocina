@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
+			// 
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -48,6 +50,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
+
+			getFavorite: (favorite) => {
+                let storeFavorites = getStore().favorites;
+                setStore({ favorites: [...storeFavorites, favorite] });
+            },
+
+			removeFavorite: (index) => {
+                let storeFavorites = getStore().favorites;
+                storeFavorites.splice(index, 1);
+                setStore({ favorites: storeFavorites });
+            },
+
 			signup: async (email, password) => {
 				try {
 					
@@ -81,7 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (response.status !== 201) {
 						console.error("There has been some error"); 
-						//se utiliza para imprimir mensajes de error en la consola del navegador o en el entorno de ejecución
+						
                         return false;
 					}
 
@@ -90,13 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({ token: data.token });
                     return true;
 
-					// sessionStorage =
-					// proporciona un área de almacenamiento accesible solo desde la misma ventana o pestaña del navegador... 
-					//...y que persiste solo durante la sesión de navegación actual
-					
-					//setItem =
-					//se utiliza para almacenar un par clave-valor en sessionStorage...
-					//...La clave es un identificador único que se usa para recuperar el valor posteriormente.
+				
 
 				} catch(error) {
 					console.log("ERROR CATCH:", error)
@@ -106,6 +114,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				sessionStorage.removeItem("token");
                 setStore({ token: null });
 			}
+
+			
 		}
 	};
 };
