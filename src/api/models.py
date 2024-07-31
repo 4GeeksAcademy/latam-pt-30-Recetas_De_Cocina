@@ -37,6 +37,7 @@ class Plato(db.Model):
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
 
+    favorito = db.Column(db.Boolean, nullable=False, default=False)
 class Ingrediente(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
@@ -62,7 +63,7 @@ class InformacionNutritiva(db.Model):
     grasa = db.Column(db.Float)
     proteina = db.Column(db.Float)
     fibra = db.Column(db.Float)
-    azucares = db.Column(db.Float, nullable=False)
+    azucares = db.Column(db.Float)
     grasas_saturadas = db.Column(db.Float)
     sodio = db.Column(db.Float)
     plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
