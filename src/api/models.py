@@ -36,8 +36,6 @@ class Plato(db.Model):
     ingredientes = db.relationship('Ingrediente', back_populates='plato')
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
-    
-    favorito = db.Column(db.Boolean, default=False)
 
 class Ingrediente(db.Model):
     
