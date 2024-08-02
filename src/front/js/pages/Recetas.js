@@ -32,10 +32,7 @@ export const Recetas = () => {
 								<div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
 									<div className="card-body">
 										<h5 className="card-title"><strong>{plato.nombre}</strong></h5>
-
 										<p>
-											{/*<img src={FlanNapolitano} className="img-fluid rounded-circle" style={{ maxWidth: "13rem", maxHeight: "13rem" }} />*/}
-
 											{plato.imagen ?
 												<img src={require(`../../img/plato/${plato.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
 												:

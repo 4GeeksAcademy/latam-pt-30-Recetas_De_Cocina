@@ -33,13 +33,13 @@ class Plato(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250))
     imagen = db.Column(db.String(100))
+    favorito = db.Column(db.Boolean, nullable=False, default=False)
     categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
     categoria = db.relationship('Categoria', back_populates='plato')
     ingredientes = db.relationship('Ingrediente', back_populates='plato')
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
-
-    favorito = db.Column(db.Boolean, nullable=False, default=False)
+    
 class Ingrediente(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)

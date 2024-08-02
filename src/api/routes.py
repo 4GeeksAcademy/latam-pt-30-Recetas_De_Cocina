@@ -212,21 +212,25 @@ def get_plato(plato_id):
     except Exception as e:
         return jsonify({"message": "Error fetching categorias", "error": str(e)}), 500
 
-#GET Categories with inner plates and inner steps, ingredients and nutritional informatio
+
+
+
+    #GET Categories with inner plates and inner steps, ingredients and nutritional informatio
 @api.route('/categorias', methods=['GET'])
 def get_categorias():
     try:
         recetas_lista = []
         platos_lista = []
-        # Obtener todas las categorias
-        categorias = Categoria.query.all()        
+        
+         # Obtener todas las categorias
+        categorias = Categoria.query.all()      
         for categoria in categorias:
             # Obtener los platos de la categoria          
             platos = Plato.query.filter_by(categoria_id=categoria.id).all()
 
             # Se reinicia la variable
             platos_lista = []       
-            for plato in platos:                                
+            for plato in platos:
                 # Obtener los ingredientes del plato
                 ingredientes = Ingrediente.query.filter_by(plato_id=plato.id).all()
                 ingredientes_list = [{"nombre": ing.nombre, "cantidad": ing.cantidad} for ing in ingredientes]
@@ -260,7 +264,8 @@ def get_categorias():
                     "imagen": plato.imagen,
                     "ingredientes": ingredientes_list,
                     "pasos": pasos_list,
-                    "informacion_nutritiva": info_nutritiva_dict
+                    "informacion_nutritiva": info_nutritiva_dict,
+                    "favorito": plato.favorito
                 }
 
                 # Se crea un arreglo de platos
@@ -270,17 +275,78 @@ def get_categorias():
             receta_dict = {
                 "categoria": categoria.nombre,
                 "imagen": categoria.imagen,
-                "platos": platos_lista
-                
+                "platos": platos_lista,                    
             }
-            
-            
-
+                    
             recetas_lista.append(receta_dict)
 
         return jsonify(recetas_lista), 200
     except Exception as e:
         return jsonify({"message": "Error fetching categorias", "error": str(e)}), 500
+    
+    
+    
+    
+    
+    
+@api.route('/recetafavoritas', methods=['GET'])
+def get_recetafavoritas():
+    try:
+        
+        platos_lista = []
+        
+         # Obtener todos los platos
+                 
+        platos = Plato.query.filter_by(favorito=True).all()
+
+                
+        for plato in platos:
+                # Obtener los ingredientes del plato
+                ingredientes = Ingrediente.query.filter_by(plato_id=plato.id).all()
+                ingredientes_list = [{"nombre": ing.nombre, "cantidad": ing.cantidad} for ing in ingredientes]
+
+                # Obtener los pasos del plato
+                pasos = Paso.query.filter_by(plato_id=plato.id).all()
+                pasos_list = [{"numero_de_paso": paso.numero_de_paso, "description": paso.description} for paso in pasos]
+
+                 # Obtener la información nutritiva del plato
+                info_nutritiva = InformacionNutritiva.query.filter_by(plato_id=plato.id).first()
+
+                # Se valida si tiene info, si no se deja vacío
+                if info_nutritiva:
+                    info_nutritiva_dict = {
+                        "calorias": info_nutritiva.calorias,
+                        "carbohidratos": info_nutritiva.carbohidratos,
+                        "energia": info_nutritiva.energia,
+                        "grasa": info_nutritiva.grasa,
+                        "proteina": info_nutritiva.proteina,
+                        "fibra": info_nutritiva.fibra,
+                        "azucares": info_nutritiva.azucares,
+                        "grasas_saturadas": info_nutritiva.grasas_saturadas,
+                        "sodio": info_nutritiva.sodio
+                    }
+                else:
+                    info_nutritiva_dict = {}
+
+                # Se crea un obj con la info del plato
+                plato_dict = {
+                    "nombre": plato.nombre,
+                    "imagen": plato.imagen,
+                    "ingredientes": ingredientes_list,
+                    "pasos": pasos_list,
+                    "informacion_nutritiva": info_nutritiva_dict,
+                    "favorito": plato.favorito
+                }
+
+                # Se crea un arreglo de platos
+                platos_lista.append(plato_dict)
+
+
+        return jsonify(platos_lista), 200
+    except Exception as e:
+        return jsonify({"message": "Error fetching categorias", "error": str(e)}), 500
+
+    
 
     #DELETE
 

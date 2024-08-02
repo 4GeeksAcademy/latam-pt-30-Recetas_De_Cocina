@@ -1,52 +1,71 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 import favo from "../../img/favo.png";
+import recetasImageUrl from "../../img/recetas.jpeg";
 
 export const RecetaFavorita = () => {
-	const { store, actions } = useContext(Context);
 
-	return (
-		<div className="container-fluid">
-			<div className="text-center mt-5">
-			 <header className="text-center py-5">
-             <h1><strong>Recetas favoritas</strong></h1>
-			 <img src={favo} class="mx-auto" alt="Card image cap" style={{maxWidth: "10rem", maxHeight: "10rem"}} />
-             </header>
-		</div>
-		<div className="collapse">
-                    <ul className="ms-auto">
-                        <li className="item dropdown">
-                            <button className="btn btn-secondary dropdown-toggle" type="button" id="favoritesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                Favorites ({store.favorites.length})
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favoritesDropdown">
-                                {store.favorites.length > 0 ? (
-                                    store.favorites.map((favorite, index) => (
-                                        <li key={index} className="d-flex justify-content-between align-items-center">
-                                            <Link className="dropdown-item" to={`/details/${favorite.type}/${favorite.uid}`}>
-                                                {favorite.name}
-                                            </Link>
-                                            <button className="btn btn-outline-danger btn-sm" onClick={() => actions.removeFavorite(index)}>
-                                                <i className="fas fa-trash-alt"></i>
-                                            </button>
-                                        </li>
-                                    ))
-                                ) : (
-                                    <li><span className="dropdown-item">No favorites added</span></li>
-                                )}
-                            </ul>
-                        </li>
-                    </ul>
+    const { store, actions } = useContext(Context);
+    const [recetas, setRecetas] = useState([]);
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        fetch('https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/recetafavoritas')
+            .then(response => response.json())
+            .then(data => {
+                setRecetas(data);
+                console.log('data', data);
+            })
+    }, [])
+
+    const handlerRedirect = (plato) => {
+        navigate('/plato', { state: plato })
+    }
+
+
+    return (
+        <div className="container-fluid">
+            <div className="text-center mt-5">
+                <header className="text-center py-5">
+                    <h1><strong>Recetas favoritas</strong></h1>
+                    <img src={favo} class="mx-auto" alt="Card image cap" style={{ maxWidth: "10rem", maxHeight: "10rem" }} />
+                </header>
+            </div>
+            <div className="container my-5">
+                <div className="row">
+                    {recetas.map((receta, index) => (
+                        <div className="col-md-3 mt-4">
+                            <div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
+                                <div className="card-body">
+                                    <h5 className="card-title"><strong>{receta.nombre}</strong></h5>
+
+                                    <p>
+                                        {/*<img src={FlanNapolitano} className="img-fluid rounded-circle" style={{ maxWidth: "13rem", maxHeight: "13rem" }} />*/}
+
+                                        {receta.imagen ?
+                                            <img src={require(`../../img/plato/${receta.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                                            :
+                                            <img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                                        }
+                                    </p>
+                                    <p className="card-text">Receta de {receta.nombre}.</p>
+                                    <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"} onClick={() => handlerRedirect(receta)}>Ver receta</button>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                    }
+
                 </div>
-        
-        
-			<br />
-			<Link to="/">
-				<button className="btn btn-secondary bg-dark">Regresar</button>
-			</Link>
-		</div>
-        
-	);
+            </div>
+            <br />
+            <Link to="/">
+                <button className="btn btn-secondary bg-dark">Regresar</button>
+            </Link>
+        </div>
+
+    );
 };
