@@ -42,7 +42,7 @@ export const Home = () => {
       <header className="text-center py-5">
         <h1><strong>Recetas de cocina</strong></h1>
       </header>
-      <div class="row align-items-center">
+      <div className="row align-items-center">
         <div className="col">
           <img src={recetasImageUr2} className="img-fluid rounded-circle" style={{ maxWidth: "20rem", maxHeight: "20rem" }} />
           <h3><strong>Deliciosas</strong></h3>
@@ -63,39 +63,39 @@ export const Home = () => {
         <p></p>
         <p></p>
 
-        <div class="card-group">
-          <div class="card card border-success mb-3">
-            <div class="card-header border-success text-success"><h4 class="card-title"><strong>Plan semanal</strong></h4></div>
+        <div className="card-group">
+          <div className="card card border-success mb-3">
+            <div className="card-header border-success text-success"><h4 className="card-title"><strong>Plan semanal</strong></h4></div>
             <p></p>
-            <img src={calendario} class="mx-auto" alt="Card image cap" style={{ maxWidth: "9rem", maxHeight: "9rem" }} />
+            <img src={calendario} className="mx-auto" alt="Card image cap" style={{ maxWidth: "9rem", maxHeight: "9rem" }} />
             <p></p>
-            <div class="card-body text-success">
-              <p class="card-text"><strong>Aqui podras crear tu plan seamanal para tus comidas dependiedo de tus gustos, dieta y alimentación nutricional.</strong></p>
+            <div className="card-body text-success">
+              <p className="card-text"><strong>Aqui podras crear tu plan seamanal para tus comidas dependiedo de tus gustos, dieta y alimentación nutricional.</strong></p>
               <Link to="/plansemanal">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-regular fa-calendar"></i></button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fa-regular fa-calendar"></i></button>
               </Link>
             </div>
           </div>
-          <div class="card card border-success mb-3">
-            <div class="card-header border-success text-success"><h4 class="card-title"><strong>Crea tu receta</strong></h4></div>
-            <img src={formulario} class="mx-auto" alt="Card image cap" style={{ maxWidth: "10rem", maxHeight: "10rem" }} />
-            <div class="card-body text-success ">
+          <div className="card card border-success mb-3">
+            <div className="card-header border-success text-success"><h4 className="card-title"><strong>Crea tu receta</strong></h4></div>
+            <img src={formulario} className="mx-auto" alt="Card image cap" style={{ maxWidth: "10rem", maxHeight: "10rem" }} />
+            <div className="card-body text-success ">
               <p></p>
-              <p class="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
+              <p className="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
               <Link to="/creareceta">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fa-solid fa-pen-to-square"></i></button>
               </Link>
             </div>
           </div>
-          <div class="card card border-success mb-3">
-            <div class="card-header border-success text-success"><h4 class="card-title"><strong>Recetas favoritas</strong></h4></div>
+          <div className="card card border-success mb-3">
+            <div className="card-header border-success text-success"><h4 className="card-title"><strong>Recetas favoritas</strong></h4></div>
             <p></p>
-            <img src={favo} class="mx-auto" alt="Card image cap" style={{ maxWidth: "10rem", maxHeight: "10rem" }} />
-            <div class="card-body text-success">
+            <img src={favo} className="mx-auto" alt="Card image cap" style={{ maxWidth: "10rem", maxHeight: "10rem" }} />
+            <div className="card-body text-success">
               <p></p>
-              <p class="card-text"><strong>Aqui podras entrar y visitar tus recetas favoritas cada vez que lo desees.</strong></p>
+              <p className="card-text"><strong>Aqui podras entrar y visitar tus recetas favoritas cada vez que lo desees.</strong></p>
               <Link to="/recetafavorita">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fa-solid fa-heart"></i></button>
               </Link>
             </div>
           </div>
@@ -113,11 +113,13 @@ export const Home = () => {
               <div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
                 <div className="card-body">
                   <h5 className="card-title"><strong>{categoria.categoria}</strong></h5>
-                  <p>
-                    <img src={recetasPostres} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
-                  </p>
+                  {categoria.imagen ?
+                    <img src={require(`../../img/categoria/${categoria.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                    :
+                    <img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                  }
                   <p className="card-text">Deliciosos {categoria.categoria} para cada ocasión.</p>
-                  <button className="btn btn-secondary bg-success" onClick={() => handlerRedirect(categoria)}>
+                  <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"} onClick={() => handlerRedirect(categoria)}>
                     Ver recetas
                   </button>
                 </div>

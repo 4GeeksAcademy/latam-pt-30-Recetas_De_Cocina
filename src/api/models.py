@@ -25,12 +25,14 @@ class Categoria(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250))
+    imagen = db.Column(db.String(100))
     plato = db.relationship('Plato', uselist=False, back_populates='categoria')
 
 class Plato(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250))
+    imagen = db.Column(db.String(100))
     categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.id'))
     categoria = db.relationship('Categoria', back_populates='plato')
     ingredientes = db.relationship('Ingrediente', back_populates='plato')

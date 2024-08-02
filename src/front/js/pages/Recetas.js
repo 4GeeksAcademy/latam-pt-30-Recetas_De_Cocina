@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import FlanNapolitano from "../../img/FlanNapolitano.jpg";
+import recetasImageUrl from "../../img/recetas.jpeg";
 import carlota from "../../img/carlota.jpg";
 import brownie from "../../img/brownie.jpg";
 import Arrozconleche from "../../img/Arrozconleche.jpg";
@@ -31,11 +32,18 @@ export const Recetas = () => {
 								<div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
 									<div className="card-body">
 										<h5 className="card-title"><strong>{plato.nombre}</strong></h5>
+
 										<p>
-											<img src={FlanNapolitano} className="img-fluid rounded-circle" style={{ maxWidth: "13rem", maxHeight: "13rem" }} />
+											{/*<img src={FlanNapolitano} className="img-fluid rounded-circle" style={{ maxWidth: "13rem", maxHeight: "13rem" }} />*/}
+
+											{plato.imagen ?
+												<img src={require(`../../img/plato/${plato.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+												:
+												<img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+											}
 										</p>
 										<p className="card-text">Receta de {plato.nombre}.</p>
-										<button className="btn btn-secondary bg-success" onClick={() => handlerRedirect(plato)}>Ver receta</button>
+										<button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"} onClick={() => handlerRedirect(plato)}>Ver receta</button>
 									</div>
 								</div>
 							</div>

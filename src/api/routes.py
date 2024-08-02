@@ -257,6 +257,7 @@ def get_categorias():
                 # Se crea un obj con la info del plato
                 plato_dict = {
                     "nombre": plato.nombre,
+                    "imagen": plato.imagen,
                     "ingredientes": ingredientes_list,
                     "pasos": pasos_list,
                     "informacion_nutritiva": info_nutritiva_dict
@@ -268,8 +269,12 @@ def get_categorias():
             # Se asigna a cada categoria su arreglo de platos
             receta_dict = {
                 "categoria": categoria.nombre,
+                "imagen": categoria.imagen,
                 "platos": platos_lista
+                
             }
+            
+            
 
             recetas_lista.append(receta_dict)
 
