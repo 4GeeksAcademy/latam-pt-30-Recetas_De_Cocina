@@ -25,6 +25,7 @@ class Categoria(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250))
+    imagen = db.Column(db.String(400))
     plato = db.relationship('Plato', uselist=False, back_populates='categoria')
 
 class Plato(db.Model):
@@ -36,9 +37,10 @@ class Plato(db.Model):
     ingredientes = db.relationship('Ingrediente', back_populates='plato')
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
-
     favorito = db.Column(db.Boolean, nullable=False, default=False)
+    imagen = db.Column(db.String(400))
 class Ingrediente(db.Model):
+
     
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(250), nullable=False)
