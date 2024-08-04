@@ -7,19 +7,31 @@ import Arrozconleche from "../../img/Arrozconleche.jpg";
 import tresleches from "../../img/tresleches.jpg";
 import { Context } from "../store/appContext";
 import favo from "../../img/favo.png";
+import recetasImageUrl from "../../img/recetas.jpeg";
 
 export const Plato = () => {
 	const location = useLocation();
 	const plato = location.state.nombre;
+	const platoImagen = location.state.imagen;
+	const platoFavorito = location.state.favorito;
 	const ingredientes = location.state.ingredientes;
 	const pasos = location.state.pasos;
 	const nutricion = location.state.informacion_nutritiva;
+
+	const handleGoback = () => {
+		window.history.back();
+	}
 
 	return (
 		<div className="container-fluid   d-flex flex-column justify-content-center" style={{ minHeight: "100vh" }}>
 			<div className="row border-bottom border-2 pb-4 border-danger py-5">
 				<div className="col-md-6">
-					<img src={FlanNapolitano} className="img-fluid  rounded-circle" style={{ maxWidth: "50rem", maxHeight: "50rem" }} />
+					{platoImagen ?
+						< img src={require(`../../img/plato/${platoImagen}`).default} className="img-fluid  rounded-circle" style={{ maxWidth: "50rem", maxHeight: "50rem" }} />
+						:
+						<img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+					}
+
 				</div>
 				<div className="col-md-6 text-center d-flex flex-column justify-content-center">
 					<h1><strong>{plato}</strong></h1>
@@ -65,14 +77,16 @@ export const Plato = () => {
 							</div>
 						</div>
 					</div>
-
-					<p></p>
-
-
-					<Link to="/postres">
-						<button className="btn btn-secondary bg-dark">Regresar</button>
-					</Link>
-
+					<div className="w-100 d-flex justify-content-end flex-column p-4">
+						<button className="btn btn-outline-success" type="button">
+							{platoFavorito ?
+								<i class="fa-solid fa-heart"></i>
+								:
+								<i class="fa-solid fa-heart-circle-xmark"></i>
+							}
+						</button>
+						<button className="mt-5 btn btn-secondary bg-dark" onClick={() => handleGoback()}>Regresar</button>
+					</div>
 				</div>
 			</div>
 		</div>

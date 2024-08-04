@@ -15,40 +15,40 @@ export const Lunes = () => {
              </header>
 		</div>
 
-        <div class="row justify-content-md-center">
-        <div class="col-3">
-        <div class="card"  >
+        <div className="row justify-content-md-center">
+        <div className="col-3">
+        <div className="card"  >
         
-  <div class="card-body">
-    <h5 class="card-title"><strong>Desayuno</strong></h5>
-    <p class="card-text">Dlicioso desayuno de este día.</p>
-    <a href="#" class="btn btn-success bg-dark"><i class="fa-solid fa-plus"></i></a>
+  <div className="card-body">
+    <h5 className="card-title"><strong>Desayuno</strong></h5>
+    <p className="card-text">Dlicioso desayuno de este día.</p>
+    <a href="#" className="btn btn-success bg-dark"><i className="fa-solid fa-plus"></i></a>
   </div>
   </div>
   </div>
 </div>
 
-<div class="row justify-content-md-center">
-        <div class="col-3">
-        <div class="card"  >
+<div className="row justify-content-md-center">
+        <div className="col-3">
+        <div className="card"  >
         
-  <div class="card-body">
-    <h5 class="card-title"><strong>Comida</strong></h5>
-    <p class="card-text">Deliciosa comida del día.</p>
-    <a href="#" class="btn btn-success bg-dark"><i class="fa-solid fa-plus"></i></a>
+  <div className="card-body">
+    <h5 className="card-title"><strong>Comida</strong></h5>
+    <p className="card-text">Deliciosa comida del día.</p>
+    <a href="#" className="btn btn-success bg-dark"><i className="fa-solid fa-plus"></i></a>
   </div>
   </div>
   </div>
 </div>
 
-<div class="row justify-content-md-center">
-        <div class="col-3">
-        <div class="card"  >
+<div className="row justify-content-md-center">
+        <div className="col-3">
+        <div className="card"  >
         
-  <div class="card-body">
-    <h5 class="card-title"><strong>Cena</strong></h5>
-    <p class="card-text">Deliciosa cena del día.</p>
-    <a href="#" class="btn btn-success bg-dark"><i class="fa-solid fa-plus"></i></a>
+  <div className="card-body">
+    <h5 className="card-title"><strong>Cena</strong></h5>
+    <p className="card-text">Deliciosa cena del día.</p>
+    <a href="#" className="btn btn-success bg-dark"><i className="fa-solid fa-plus"></i></a>
   </div>
   </div>
   </div>
