@@ -12,23 +12,28 @@ export const Recetas = () => {
 			.then(data => {
 				setRecetas(data);
 			})
-	}, [])
+	}, [id])
 
-	return (
-		<div className="container">
-			<div className="text-center mt-5">
-				<header className="text-center py-5">
-					{
-						recetas ?
-							<h1><strong>{recetas.categoria}</strong></h1>
-							:
-							<h1><strong>Cargando...</strong></h1>
-					}
-				</header>
-				<div className="container my-5">
-					<div className="row">
-						{recetas ?
-							recetas.list.map((receta, index) => (
+	if (!recetas) {
+		return (
+			<div className="container">
+				<div className="text-center mt-5">
+					<header className="text-center py-5">
+						<h1><strong>Cargando...</strong></h1>
+					</header>
+				</div>
+			</div>
+		)
+	} else {
+		return (
+			<div className="container">
+				<div className="text-center mt-5">
+					<header className="text-center py-5">
+						<h1><strong>{recetas.categoria}</strong></h1>
+					</header>
+					<div className="container my-5">
+						<div className="row">
+							{recetas.list.map((receta, index) => (
 								<div className="col-md-3 mt-4">
 									<div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
 										<div className="card-body">
@@ -48,18 +53,16 @@ export const Recetas = () => {
 									</div>
 								</div>
 							))
-							:
-							<></>
-						}
+							}
+						</div>
 					</div>
 				</div>
-
-
+				<br />
+				<Link to="/">
+					<button className="btn btn-secondary bg-dark">Ver mas</button>
+				</Link>
 			</div>
-			<br />
-			<Link to="/">
-				<button className="btn btn-secondary bg-dark">Ver mas</button>
-			</Link>
-		</div>
-	);
+		);
+	}
+
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import FlanNapolitano from "../../img/FlanNapolitano.jpg";
 import carlota from "../../img/carlota.jpg";
 import brownie from "../../img/brownie.jpg";
@@ -12,20 +12,28 @@ import recetasImageUrl from "../../img/recetas.jpeg";
 export const Plato = () => {
 	const { id } = useParams();
 	const [plato, setPlato] = useState(null);
+	const navigate = useNavigate();
 
-	useEffect(() => {
+	const fetchPlato = async () => {
 		const url = `https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/plato/info/${id}`;
-		fetch(url)
-			.then(response => response.json())
-			.then(data => {
-				setPlato(data);
-				console.log('data', data)
-			})
-	}, [])
+		const response = await fetch(url, { method: 'GET' });
+		if (response.ok) {
+			const data = await response.json();
+			setPlato(data);
+		} else {
+			console.error('Failed to fetch recipe');
+		}
+	}
 
+	useEffect(async () => {
+		await fetchPlato();
+	}, [id])
 
-	const handleGoback = () => {
-		window.history.back();
+	const handleFavoritePlate = async (plato) => {
+		const url = `https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/plato/favorito/${plato.id}`;
+		const response = await fetch(url, { method: 'PUT' })
+		await fetchPlato();
+
 	}
 
 	if (!plato) {
@@ -90,18 +98,21 @@ export const Plato = () => {
 							</div>
 						</div>
 						<div className="w-100 d-flex justify-content-end flex-column p-4">
-							<button className="btn btn-outline-success" type="button">
+							<button className="btn btn-outline-success" type="button" onClick={() => handleFavoritePlate(plato)}>
 								{plato.favorito ?
-									<i class="fa-solid fa-heart"></i>
-									:
 									<i class="fa-solid fa-heart-circle-xmark"></i>
+									:
+									<i class="fa-solid fa-heart"></i>
 								}
 							</button>
-							<button className="mt-5 btn btn-secondary bg-dark" onClick={() => handleGoback()}>Regresar</button>
+							<Link to={`/recetas/${plato.categoria_id}`}>
+								<button className="mt-5 btn btn-secondary bg-dark">Regresar</button>
+							</Link>
+
 						</div>
 					</div>
 				</div>
-			</div>
+			</div >
 		);
 	};
 }

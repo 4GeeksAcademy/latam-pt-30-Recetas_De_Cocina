@@ -9,21 +9,14 @@ export const RecetaFavorita = () => {
 
     const { store, actions } = useContext(Context);
     const [recetas, setRecetas] = useState([]);
-    const navigate = useNavigate();
-
 
     useEffect(() => {
         fetch('https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/recetafavoritas')
             .then(response => response.json())
             .then(data => {
                 setRecetas(data);
-                console.log('data', data);
             })
     }, [])
-
-    const handlerRedirect = (plato) => {
-        navigate('/plato', { state: plato })
-    }
 
 
     return (
@@ -46,13 +39,16 @@ export const RecetaFavorita = () => {
                                         {/*<img src={FlanNapolitano} className="img-fluid rounded-circle" style={{ maxWidth: "13rem", maxHeight: "13rem" }} />*/}
 
                                         {receta.imagen ?
-                                            <img src={require(`../../img/plato/${receta.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                                            <img src={receta.imagen} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
                                             :
                                             <img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
                                         }
                                     </p>
                                     <p className="card-text">Receta de {receta.nombre}.</p>
-                                    <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"} onClick={() => handlerRedirect(receta)}>Ver receta</button>
+                                    <Link to={`/plato/${receta.id}`}>
+                                        <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"}>Ver receta</button>
+                                    </Link>
+
                                 </div>
                             </div>
                         </div>
