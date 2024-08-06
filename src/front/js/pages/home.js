@@ -17,25 +17,16 @@ import get from "../utils/data";
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [categorias, setCategorias] = useState([]);
-  const [receta, setReceta] = useState(null);
-  const navigate = useNavigate();
 
 
   useEffect(() => {
     fetch('https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/categorias')
       .then(response => response.json())
       .then(data => {
-        setCategorias(data);
+        setCategorias(data);        
       })
   }, [])
 
-  const handlerRedirect = (categoria) => {
-    const receta_obj = {
-      categoria_nombre: categoria.categoria,
-      platos: categoria.platos
-    }
-    navigate('/recetas', { state: receta_obj })
-  }
 
   return (
     <div className=" container-fluid  text-center mt-5">
@@ -112,16 +103,18 @@ export const Home = () => {
             <div className="col-md-3 mt-4">
               <div className={index % 2 == 0 ? "text-light bg-dark card bg-secondary" : "text-light bg-success card bg-secondary"}>
                 <div className="card-body">
-                  <h5 className="card-title"><strong>{categoria.categoria}</strong></h5>
+                  <h5 className="card-title"><strong>{categoria.nombre}</strong></h5>
                   {categoria.imagen ?
-                    <img src={require(`../../img/categoria/${categoria.imagen}`).default} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
+                    <img src={categoria.imagen} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
                     :
                     <img src={recetasImageUrl} className="img-fluid rounded-circle" style={{ maxWidth: "17rem", maxHeight: "17rem" }} />
                   }
-                  <p className="card-text">Deliciosos {categoria.categoria} para cada ocasión.</p>
-                  <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"} onClick={() => handlerRedirect(categoria)}>
-                    Ver recetas
-                  </button>
+                  <p className="card-text">Deliciosos {categoria.nombre} para cada ocasión.</p>
+                  <Link to={`/recetas/${categoria.id}`}>
+                    <button className={index % 2 == 0 ? "btn btn-secondary bg-success" : "btn btn-secondary bg-dark"}>
+                      Ver recetas
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
