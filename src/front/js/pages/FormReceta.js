@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RecetaItem } from "../component/RecetaItem";
+import formulario from "../../img/crearecets.jpg";
 
 export const RecetaForm = () => {
 	const [receta, setReceta] = useState({
@@ -33,6 +34,11 @@ export const RecetaForm = () => {
 		}
 	};
 
+    const handleDelete = (id) => {
+        const nuevasRecetas = recetas.filter((recetadelete) => recetadelete.delete !== id);
+        setRecetasItems(nuevasRecetas);
+      };
+
 	useEffect(() => {
 		let data = localStorage.getItem("lrecetas");
 		if (data) {
@@ -44,13 +50,20 @@ export const RecetaForm = () => {
 		localStorage.setItem("lrecetas", JSON.stringify(recetasItems));
 	}, [recetasItems]);
 
+    
+
 	return (
-		<div style={{ backgroundColor: "#DDF7E3", minHeight: "100vh", minWidth: "100vw" }}>
+		<div >
 			<div className="d-flex justify-content-center">
-				<div className="col-md-4">
-					<h3>Formulario de recetas de cocina.</h3>
+				<div className="col-md-4 text-center">
+                <header className="text-center py-5">
+             <h1><strong>Crea tu receta</strong></h1>
+			 <img src={formulario} class="mx-auto" alt="Card image cap" style={{maxWidth: "15rem", maxHeight: "15rem"}} />
+             </header>
+             <div class="card border-success bg-dark text-white">
+             <div class="card-body ">
 					<form onSubmit={handleAddReceta}>
-						<label>Receta </label>
+						<label><strong>Receta </strong></label>
 						<input
 							type="text"
 							name="nombre"
@@ -60,7 +73,7 @@ export const RecetaForm = () => {
 							className="form-control"
 						/>
 						<br />
-						<label>Ingredientes </label>
+						<label><strong>Ingredientes</strong> </label>
 						<textarea
 							type="textarea"
 							name="ingredientes"
@@ -70,8 +83,7 @@ export const RecetaForm = () => {
 							className="form-control"
 						></textarea>
 						<br />
-                        <br />
-						<label>Pasos </label>
+						<label><strong>Pasos</strong> </label>
 						<textarea
 							type="textarea"
 							name="Pasos"
@@ -81,7 +93,7 @@ export const RecetaForm = () => {
 							className="form-control"
 						></textarea>
 						<br />
-						<label>Tiempo </label>
+						<label><strong>Tiempo</strong> </label>
 						<input
 							type="number"
 							name="tiempo"
@@ -92,12 +104,14 @@ export const RecetaForm = () => {
 						/>
 						<br />
 						<div className="d-flex justify-content-center">
-							<button type="submit" className="btn btn-primary col-md-4">
+							<button type="submit" className="btn text-white bg-success col-md-4">
 								Agregar receta
 							</button>
 						</div>
 					</form>
 				</div>
+                </div>
+                </div>
 			</div>
 			<br />
 			<div className="d-flex justify-content-center">
@@ -106,7 +120,8 @@ export const RecetaForm = () => {
 			<div className="container p-3">
 				<div className="row">
 					{recetasItems.map((rec, index) => (
-						<RecetaItem key={index} receta={rec} />
+						<RecetaItem key={index} receta={rec}  onDelete={handleDelete} />
+                         
 					))}
 				</div>
 			</div>
