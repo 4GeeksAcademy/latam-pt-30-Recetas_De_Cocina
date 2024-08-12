@@ -5,7 +5,7 @@ from unicodedata import category
 from flask import Flask, request, jsonify, url_for, Blueprint, render_template # type: ignore
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS # type: ignore
-from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva
+from api.models import Paso, db, User, Plato, Categoria,Ingrediente,InformacionNutritiva, UsuarioComida
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import create_access_token
 
@@ -242,7 +242,7 @@ def get_plato_info(plato_id):
                 "ingredientes": ingredientes_list,
                 "pasos": pasos_list,
                 "nutricion": info_nutritiva_dict
-            }    
+            }
 
         return jsonify(recipe_dict), 200
     except Exception as e:
@@ -294,3 +294,54 @@ def delete_plato(plato_id):
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "Error deleting plato", "error": str(e)}), 500 
+
+@api.route('/plansemanal/<int:usuario_id>/<string:dia_p>', methods=['GET'])
+def get_plansemanal(usuario_id, dia_p):    
+    try:
+        info_list = []
+
+        usuarioComidas = UsuarioComida.query.filter_by(idUsuario = usuario_id, dia = dia_p).all()
+
+        if not usuarioComidas:
+            return jsonify({"message": "Info not found"}), 404
+        
+        for usuarioComida in usuarioComidas:
+            plato = Plato.query.get(usuarioComida.idComida)
+            categoria = Categoria.query.get(plato.categoria_id)
+            
+            info_dict = {                
+                "plato_id": plato.id,
+                "plato_nombre": plato.nombre,                                
+                "categoria_id": categoria.id,
+                "categoria_nombre": categoria.nombre
+            }
+
+            info_list.append(info_dict)
+
+        return jsonify(info_list), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message": "Error getting plan semanal", "error": str(e)}), 500
+
+@api.route('/plansemanal', methods=['POST'])
+def add_plansemanal():
+    try:
+        data = request.json
+        usuario_id = data.get('usuario_id')
+        comida_id = data.get('comida_id')
+        dia = data.get('dia')        
+
+            
+        info_usuarioComida = UsuarioComida(            
+            idUsuario= usuario_id,
+            idComida=comida_id,                                
+            dia= dia
+        )
+
+        db.session.add(info_usuarioComida)
+        db.session.commit()
+
+        return jsonify({"message": "Plato agregado"}), 204
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message": "Error getting plan semanal", "error": str(e)}), 500     

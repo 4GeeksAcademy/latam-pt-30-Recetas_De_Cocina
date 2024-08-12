@@ -8,6 +8,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    usuarioComida = db.relationship('UsuarioComida', uselist=True, back_populates='usuario')
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -38,9 +39,12 @@ class Plato(db.Model):
     categoria = db.relationship('Categoria', back_populates='plato')
     ingredientes = db.relationship('Ingrediente', back_populates='plato')
     informacion_nutritiva = db.relationship('InformacionNutritiva', uselist=False, back_populates='plato')
+    usuarioComida = db.relationship('UsuarioComida', uselist=True, back_populates='plato')
     pasos = db.relationship('Paso', back_populates='plato')
     favorito = db.Column(db.Boolean, nullable=False, default=False)
     imagen = db.Column(db.String(400))
+
+
 class Ingrediente(db.Model):
 
     
@@ -72,5 +76,13 @@ class InformacionNutritiva(db.Model):
     sodio = db.Column(db.Float)
     plato_id = db.Column(db.Integer, db.ForeignKey('plato.id'))
     plato = db.relationship('Plato', back_populates='informacion_nutritiva')
-    
+
+class UsuarioComida(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    dia = db.Column(db.String(2))
+    idUsuario = db.Column(db.Integer, db.ForeignKey('user.id'))
+    idComida = db.Column(db.Integer, db.ForeignKey('plato.id'))    
+    usuario = db.relationship('User', back_populates='usuarioComida')
+    plato = db.relationship('Plato', back_populates='usuarioComida')    
     

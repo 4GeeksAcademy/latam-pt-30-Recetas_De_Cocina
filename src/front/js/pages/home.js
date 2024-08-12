@@ -123,10 +123,6 @@ export const Home = () => {
         </div>
       </div>
 
-      <Link to="/demo">
-        <button className="btn btn-secondary bg-dark">Ver mas</button>
-      </Link>
-
     </div >
   );
 };

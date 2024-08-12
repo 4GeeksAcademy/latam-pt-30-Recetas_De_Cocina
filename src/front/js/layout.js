@@ -9,6 +9,8 @@ import { Private } from "./pages/Private";
 
 
 import { Home } from "./pages/home";
+import { Dia } from "./pages/Dia";
+import { AgregarPlan } from "./pages/AgregarPlan";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { PlanSemanal } from "./pages/PlanSemanal";
@@ -78,6 +80,8 @@ const Layout = () => {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Recetas />} path="/recetas/:id" />
                         <Route element={<Plato />} path="/plato/:id" />
+                        <Route element={<Dia />} path="/dia/:id" />
+                        <Route element={<AgregarPlan />} path="agregarPlan/:dia/:categoria" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

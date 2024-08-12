@@ -25,14 +25,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getMessage: async () => {
-				try{
+				try {
 					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
 					return data;
-				}catch(error){
+				} catch (error) {
 					console.log("Error loading message from backend", error)
 				}
 			},
@@ -52,20 +52,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getFavorite: (favorite) => {
-                let storeFavorites = getStore().favorites;
-                setStore({ favorites: [...storeFavorites, favorite] });
-            },
+				let storeFavorites = getStore().favorites;
+				setStore({ favorites: [...storeFavorites, favorite] });
+			},
 
 			removeFavorite: (index) => {
-                let storeFavorites = getStore().favorites;
-                storeFavorites.splice(index, 1);
-                setStore({ favorites: storeFavorites });
-            },
+				let storeFavorites = getStore().favorites;
+				storeFavorites.splice(index, 1);
+				setStore({ favorites: storeFavorites });
+			},
 
 			signup: async (email, password) => {
 				try {
-					
-					const response = await fetch(process.env.BACKEND_URL + "/api/signup", {
+
+					const response = await fetch("https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/signup", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
@@ -77,45 +77,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 					} else {
 						console.error("Failed to sign up")
 						return false
-					  }
+					}
 
 				} catch (error) {
 					console.log("Error during sign up", error)
-				  }
+				}
 			},
 			login: async (email, password) => {
 				try {
-					const response = await fetch(process.env.BACKEND_URL + "/api/login", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({ email, password })
-                    });
+					const response = await fetch("https://legendary-space-enigma-675vrxw7556f4r4r-3001.app.github.dev/api/login", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({ email, password })
+					});
 
 					if (response.status !== 201) {
-						console.error("There has been some error"); 
-						
-                        return false;
+						console.error("There has been some error");
+
+						return false;
 					}
 
-					const data = response.json()
+					const data = await response.json()
 					sessionStorage.setItem("token", data.token);
-                    setStore({ token: data.token });
-                    return true;
+					setStore({ token: data.token });
+					return true;
 
-				
 
-				} catch(error) {
+
+				} catch (error) {
 					console.log("ERROR CATCH:", error)
 				}
 			},
 			logout: () => {
 				sessionStorage.removeItem("token");
-                setStore({ token: null });
+				setStore({ token: null });
 			}
 
-			
+
 		}
 	};
 };
