@@ -31,7 +31,7 @@ export const Home = () => {
   return (
     <div className=" container-fluid  text-center mt-5">
       <header className="text-center py-5">
-        <h1><strong>Recetas de cocina</strong></h1>
+        <h1><strong>Recetas de cocina <i class="fa-solid fa-bowl-food"></i></strong></h1>
       </header>
       <div className="row align-items-center">
         <div className="col">
@@ -73,7 +73,7 @@ export const Home = () => {
             <div className="card-body text-success ">
               <p></p>
               <p className="card-text"><strong>Aqui podras crear y aportar tus propias recetas culinarias, ya sean desayunos, comidas o cenas, con los ingrdientes que mas te gusten.</strong>.</p>
-              <Link to="/creareceta">
+              <Link to="/recetaform">
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fa-solid fa-pen-to-square"></i></button>
               </Link>
             </div>
